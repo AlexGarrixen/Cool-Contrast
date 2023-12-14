@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 
-import { Inter } from "next/font/google";
+import { css } from "@root/styled-system/css";
 
-import { css } from "~/styled-system/css";
+import { dmSans } from "@/styles/fonts";
 
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body
-        className={`${inter.className} ${css({
+        className={`${dmSans.className} ${css({
           color: "text-primary",
           bg: "bg-tertiary",
           textStyle: "body-base",

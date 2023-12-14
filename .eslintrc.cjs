@@ -77,6 +77,11 @@ module.exports = {
             group: "external",
             position: "after",
           },
+          {
+            pattern: "@root/**",
+            group: "external",
+            position: "after",
+          },
         ],
         "newlines-between": "always",
       },
