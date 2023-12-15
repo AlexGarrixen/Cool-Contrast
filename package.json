@@ -36,6 +36,8 @@
     "@storybook/nextjs": "^7.6.4",
     "@storybook/react": "^7.6.4",
     "@storybook/test": "^7.6.4",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
     "@types/color": "^3.0.6",
     "@types/color-convert": "^2.0.3",
     "@types/jest": "^29.5.11",

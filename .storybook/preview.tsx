@@ -11,7 +11,6 @@ const preview: Preview = {
     (Story) => (
       <div
         className={`${dmSans.className} ${css({
-          bg: "bg-tertiary",
           color: "text-primary",
           textStyle: "body-base",
         })}`}
