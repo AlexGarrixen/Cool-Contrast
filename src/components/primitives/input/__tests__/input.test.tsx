@@ -27,7 +27,7 @@ describe("Primitives / Input", () => {
     expect(input).toHaveAttribute("aria-disabled", "true");
   });
 
-  it("Verify que  se llame un manejador de evento", () => {
+  it("verify that an event handler is called", () => {
     const mockHandler = jest.fn();
     const screen = render(<Input onChange={mockHandler} />);
     const input = screen.getByRole("textbox") as HTMLInputElement;
