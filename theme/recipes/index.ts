@@ -1,5 +1,10 @@
 import inputRecipe from "./input";
+import sliderRecipe from "./slider";
 
-export default {
+export const recipes = {
   input: inputRecipe,
+};
+
+export const slotRecipes = {
+  slider: sliderRecipe,
 };

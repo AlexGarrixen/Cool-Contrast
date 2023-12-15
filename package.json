@@ -19,6 +19,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@radix-ui/react-slider": "^1.1.2",
     "color": "^4.2.3",
     "next": "14.0.3",
     "react": "^18",

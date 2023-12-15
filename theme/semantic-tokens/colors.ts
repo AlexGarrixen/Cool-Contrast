@@ -5,6 +5,7 @@ export default defineSemanticTokens.colors({
   "bg-primary-solid": { value: "{colors.neutral.950}" },
   "bg-secondary": { value: "{colors.neutral.50}" },
   "bg-tertiary": { value: "{colors.neutral.100}" },
+  "bg-quarterary": { value: "{colors.neutral.200}" },
   "bg-disabled": { value: "{colors.neutral.100}" },
   "bg-disabled_subtle": { value: "{colors.neutral.50}" },
   "text-primary": { value: "{colors.neutral.900}" },

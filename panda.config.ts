@@ -4,7 +4,7 @@ import tokens from "./theme/tokens";
 import semanticTokens from "./theme/semantic-tokens";
 import textStyles from "./theme/text-styles";
 import breakpoints from "./theme/breakpoints";
-import recipes from "./theme/recipes";
+import { recipes, slotRecipes } from "./theme/recipes";
 
 export default defineConfig({
   preflight: true,
@@ -25,5 +25,6 @@ export default defineConfig({
     textStyles,
     breakpoints,
     recipes,
+    slotRecipes,
   },
 });
