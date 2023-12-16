@@ -16,7 +16,8 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "build:icons": "npx @svgr/cli --config-file .svgrrc src/svgs"
   },
   "dependencies": {
     "@radix-ui/react-slider": "^1.1.2",
@@ -37,6 +38,7 @@
     "@storybook/nextjs": "^7.6.4",
     "@storybook/react": "^7.6.4",
     "@storybook/test": "^7.6.4",
+    "@svgr/cli": "^8.1.0",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
     "@types/color": "^3.0.6",

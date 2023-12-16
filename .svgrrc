@@ -1,0 +1,8 @@
+{
+  "icon": true,
+  "jsxRuntime": "automatic",
+  "typescript": true,
+  "prettier": true,
+  "ignoreExisting": true,
+  "outDir": "src/components/icons"
+}
