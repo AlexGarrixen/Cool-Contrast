@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
 import { css } from "@root/styled-system/css";
+import { container } from "@root/styled-system/patterns";
 
 import { dmSans } from "@/styles/fonts";
+import { Navbar } from "@/components/navbar";
 
 import "../styles/globals.css";
 
@@ -21,7 +23,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           textStyle: "body-base",
         })}`}
       >
-        {children}
+        <Navbar />
+        <main className={container()}>{children}</main>
       </body>
     </html>
   );

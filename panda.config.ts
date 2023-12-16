@@ -4,6 +4,7 @@ import tokens from "./theme/tokens";
 import semanticTokens from "./theme/semantic-tokens";
 import textStyles from "./theme/text-styles";
 import breakpoints from "./theme/breakpoints";
+import patterns from "./theme/patterns";
 import { recipes, slotRecipes } from "./theme/recipes";
 
 export default defineConfig({
@@ -19,6 +20,7 @@ export default defineConfig({
   outdir: "styled-system",
   exclude: [],
   presets: [],
+  patterns: { extend: patterns },
   theme: {
     tokens,
     semanticTokens,
