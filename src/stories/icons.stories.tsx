@@ -28,6 +28,7 @@ export const Collection: Story = {
       <Icons.HappyFill />
       <Icons.SettingsFill />
       <Icons.UnhappyFill />
+      <Icons.GithubFill />
     </div>
   ),
 };

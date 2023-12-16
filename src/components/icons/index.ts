@@ -4,6 +4,8 @@ export { default as CloseFill } from "./CloseFill";
 
 export { default as EmojiVeryHappyFill } from "./EmojiVeryHappyFill";
 
+export { default as GithubFill } from "./GithubFill";
+
 export { default as HappyFill } from "./HappyFill";
 
 export { default as SettingsFill } from "./SettingsFill";
