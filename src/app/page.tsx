@@ -1,3 +1,5 @@
+import { ContrastResults } from "@/components/contrast-results";
+
 export default function Home() {
-  return <p>Content</p>;
+  return <ContrastResults />;
 }

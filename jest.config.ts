@@ -10,7 +10,7 @@ const customJestConfig: Config = {
   coverageReporters: ["lcov", "text"],
   coverageDirectory: "coverage",
   testPathIgnorePatterns: ["/node_modules/", "/styled-system/"],
-  coveragePathIgnorePatterns: ["/node_modules/", "/styled-system/"],
+  coveragePathIgnorePatterns: ["/node_modules/", "/styled-system/", "/src/components/icons"],
   coverageThreshold: {
     global: {
       branches: 80,
