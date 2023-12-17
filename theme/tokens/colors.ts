@@ -45,7 +45,7 @@ export default defineTokens.colors({
     900: { value: "#7A2E0E" },
     950: { value: "#4E1D09" },
   },
-  suscess: {
+  success: {
     25: { value: "#F6FEF9" },
     50: { value: "#ECFDF3" },
     100: { value: "#DCFAE6" },
