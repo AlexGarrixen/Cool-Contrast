@@ -22,4 +22,10 @@ export default defineTextStyles({
   "display-md": {
     value: { fontSize: "1.875rem", lineHeight: "38px" },
   },
+  "display-lg": {
+    value: { fontSize: "2.25rem", lineHeight: "44px" },
+  },
+  "display-xl": {
+    value: { fontSize: "3rem", lineHeight: "60px" },
+  },
 });
