@@ -1,19 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useAtom } from "jotai";
+
+import { background } from "@/store";
 
 import { Panel } from "./panel";
 import { ColorControl, PopoverColorChannels } from "./color-control";
 
 export function BackgroundInput() {
-  const [sourceColor, setSourceColor] = useState("#8FFF00");
+  const [bg, setBg] = useAtom(background);
 
   return (
     <Panel label="BACKGROUND">
       <ColorControl
-        popover={<PopoverColorChannels sourceColor={sourceColor} onChange={setSourceColor} />}
-        sourceColor={sourceColor}
-        onChange={setSourceColor}
+        popover={<PopoverColorChannels sourceColor={bg} onChange={setBg} />}
+        sourceColor={bg}
+        onChange={setBg}
       />
     </Panel>
   );

@@ -1,10 +1,8 @@
 import { css } from "@root/styled-system/css";
 
-import { Button } from "@/components/primitives/button";
-import { ChangeFill } from "@/components/icons";
-
 import { BackgroundInput } from "./background";
 import { ForegroundInput } from "./foreground";
+import { SwapButton } from "./swap-button";
 
 export function ColorInputs() {
   return (
@@ -19,9 +17,7 @@ export function ColorInputs() {
       })}
     >
       <BackgroundInput />
-      <Button isIconOnly className={css({ shadow: "sm" })} variant="solid-white">
-        <ChangeFill />
-      </Button>
+      <SwapButton />
       <ForegroundInput />
     </section>
   );

@@ -19,10 +19,15 @@ export default {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "flex-end",
-    color: "fg-success",
   }),
 
-  feedback: css({ textStyle: "body-lg", mb: "2", fontWeight: "500", display: "block" }),
+  feedback: css({
+    textStyle: "body-lg",
+    mb: "2",
+    fontWeight: "500",
+    display: "block",
+    textTransform: "capitalize",
+  }),
 
   contrastRatio: css({ textStyle: "display-xl", fontWeight: "bold", display: "block" }),
 

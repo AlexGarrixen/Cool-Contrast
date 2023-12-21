@@ -23,6 +23,7 @@
     "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-slider": "^1.1.2",
     "color": "^4.2.3",
+    "jotai": "^2.6.0",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18"
