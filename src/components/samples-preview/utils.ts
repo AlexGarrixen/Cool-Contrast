@@ -2,9 +2,11 @@ export const bgVar = "--bg";
 
 export const fgVar = "--fg";
 
-export const cssBgVar = `var(${bgVar})`;
+export const alphaVar = "--alpha";
 
-export const cssFgVar = `var(${fgVar})`;
+export const cssBgVar = `rgb(var(${bgVar}) / var(${alphaVar}, 1))`;
+
+export const cssFgVar = `rgb(var(${fgVar}) / var(${alphaVar}, 1))`;
 
 export const inlineStylesBg = {
   backgroundColor: cssBgVar,
