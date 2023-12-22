@@ -12,6 +12,8 @@ export { default as GithubFill } from "./GithubFill";
 
 export { default as HappyFill } from "./HappyFill";
 
+export { default as PencilFill } from "./PencilFill";
+
 export { default as SettingsFill } from "./SettingsFill";
 
 export { default as UnhappyFill } from "./UnhappyFill";

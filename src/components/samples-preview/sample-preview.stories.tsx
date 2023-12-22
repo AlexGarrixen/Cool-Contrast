@@ -4,6 +4,7 @@ import { css } from "@root/styled-system/css";
 
 import { Sample1 } from "./sample-1";
 import { Sample2 } from "./sample-2";
+import { Sample3 } from "./sample-3";
 import { bgVar, fgVar } from "./utils";
 
 export default {
@@ -34,4 +35,9 @@ export const Sample_1: Story = {
 export const Sample_2: Story = {
   name: "Sample 2",
   render: () => <Sample2 />,
+};
+
+export const Sample_3: Story = {
+  name: "Sample 3",
+  render: () => <Sample3 />,
 };
