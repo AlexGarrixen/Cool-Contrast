@@ -6,6 +6,7 @@ import { Sample1 } from "./sample-1";
 import { Sample2 } from "./sample-2";
 import { Sample3 } from "./sample-3";
 import { Sample4 } from "./sample-4";
+import { Sample5 } from "./sample-5";
 import { bgVar, fgVar } from "./utils";
 
 export default {
@@ -46,4 +47,9 @@ export const Sample_3: Story = {
 export const Sample_4: Story = {
   name: "Sample 4",
   render: () => <Sample4 />,
+};
+
+export const Sample_5: Story = {
+  name: "Sample 5",
+  render: () => <Sample5 />,
 };
