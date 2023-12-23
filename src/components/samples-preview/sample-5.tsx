@@ -1,7 +1,7 @@
 import { css } from "@root/styled-system/css";
 import { stack, circle } from "@root/styled-system/patterns";
 
-import { inlineStylesBg, inlineStylesFg, cssFgVar, alphaVar } from "./utils";
+import { cssFgVar, applyStyle } from "./utils";
 
 const classes = {
   root: stack({ gap: "6", p: "6", rounded: "xl", align: "center" }),
@@ -24,13 +24,12 @@ const bgSrc =
 
 export function Sample5() {
   return (
-    <article className={classes.root} style={inlineStylesBg}>
+    <article className={classes.root} style={applyStyle("bg")}>
       <div
         className={classes.bgImg}
         style={{
-          backgroundColor: cssFgVar,
+          ...applyStyle("bg", { fromVar: cssFgVar, alpha: "0.16" }),
           backgroundImage: `url(${bgSrc})`,
-          [alphaVar as string]: "0.16",
         }}
       />
       <div className={classes.content}>
@@ -43,10 +42,10 @@ export function Sample5() {
           width={80}
         />
         <div className={classes.about}>
-          <p className={classes.username} style={inlineStylesFg}>
+          <p className={classes.username} style={applyStyle("color")}>
             Tesla
           </p>
-          <p className={classes.role} style={inlineStylesFg}>
+          <p className={classes.role} style={applyStyle("color")}>
             Electric vehicles, giant batteries & solar
           </p>
         </div>
@@ -62,7 +61,7 @@ export function Sample5() {
 
 function StatItem({ subheading, value }: { subheading: string; value: string }) {
   return (
-    <li className={classes.stat} style={inlineStylesFg}>
+    <li className={classes.stat} style={applyStyle("color")}>
       <span className={classes.statSubHeading}>{subheading}</span>
       <p className={classes.statValue}>{value}</p>
     </li>

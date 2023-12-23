@@ -6,7 +6,7 @@ import avatar from "@root/public/sample-3-avatar.jpg";
 import { Button } from "@/components/primitives/button";
 import { PencilFill } from "@/components/icons";
 
-import { inlineStylesBg, inlineStylesFg, cssBgVar, cssFgVar } from "./utils";
+import { cssBgVar, cssFgVar, applyStyle } from "./utils";
 
 const classes = {
   root: stack({
@@ -25,23 +25,30 @@ const classes = {
 
 export function Sample3() {
   return (
-    <article className={classes.root} style={inlineStylesBg}>
+    <article className={classes.root} style={applyStyle("bg")}>
       <div>
         <div className={classes.content}>
-          <p className={classes.title} style={inlineStylesFg}>
+          <p className={classes.title} style={applyStyle("color")}>
             Discover the frontend trends for 2023! 🚀
           </p>
-          <p className={classes.desc} style={inlineStylesFg}>
+          <p className={classes.desc} style={applyStyle("color")}>
             Explore the benefits of working with React, Svelte, Angular, and Vue in front-end
             development. Do not miss it!.
             <span>#frontend #react #svelte #angular #vue</span>
           </p>
         </div>
-        <PencilFill className={classes.icon} style={inlineStylesFg} />
+        <PencilFill className={classes.icon} style={applyStyle("color")} />
       </div>
       <div className={classes.bottomContent}>
         <Image alt="avatar" className={classes.avatar} src={avatar} />
-        <Button style={{ backgroundColor: cssFgVar, color: cssBgVar }}>Update</Button>
+        <Button
+          style={{
+            ...applyStyle("bg", { fromVar: cssFgVar }),
+            ...applyStyle("color", { fromVar: cssBgVar }),
+          }}
+        >
+          Update
+        </Button>
       </div>
     </article>
   );

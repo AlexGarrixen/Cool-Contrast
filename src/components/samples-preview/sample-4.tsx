@@ -1,7 +1,7 @@
 import { css } from "@root/styled-system/css";
 import { stack, circle } from "@root/styled-system/patterns";
 
-import { inlineStylesBg, inlineStylesFg, cssFgVar, cssBgVar, alphaVar } from "./utils";
+import { cssFgVar, cssBgVar, applyStyle } from "./utils";
 
 const classes = {
   root: stack({
@@ -22,13 +22,12 @@ const bgSrc =
 
 export function Sample4() {
   return (
-    <article className={classes.root} style={inlineStylesBg}>
+    <article className={classes.root} style={applyStyle("bg")}>
       <div
         className={classes.bgImg}
         style={{
-          backgroundColor: cssFgVar,
+          ...applyStyle("bg", { fromVar: cssFgVar, alpha: "0.16" }),
           backgroundImage: `url(${bgSrc})`,
-          [alphaVar as string]: "0.16",
         }}
       />
       <div className={classes.content}>
@@ -42,10 +41,10 @@ export function Sample4() {
             width={80}
           />
         </figure>
-        <p className={classes.title} style={inlineStylesFg}>
+        <p className={classes.title} style={applyStyle("color")}>
           Martin Garrix
         </p>
-        <p className={classes.desc} style={inlineStylesFg}>
+        <p className={classes.desc} style={applyStyle("color")}>
           Dj, Producer and Musician
         </p>
       </div>

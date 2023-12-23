@@ -3,7 +3,7 @@ import { css } from "@root/styled-system/css";
 import { stack, circle } from "@root/styled-system/patterns";
 import memoji from "@root/public/memoji-face.png";
 
-import { inlineStylesBg, inlineStylesFg, cssFgVar, alphaVar } from "./utils";
+import { cssFgVar, applyStyle } from "./utils";
 
 const classes = {
   root: stack({ gap: "6", p: "6", rounded: "xl", align: "center" }),
@@ -19,18 +19,18 @@ const classes = {
 
 export function Sample2() {
   return (
-    <article className={classes.root} style={inlineStylesBg}>
+    <article className={classes.root} style={applyStyle("bg")}>
       <div
         className={classes.avatar}
-        style={{ backgroundColor: cssFgVar, [alphaVar as string]: "0.16" }}
+        style={applyStyle("bg", { fromVar: cssFgVar, alpha: "0.16" })}
       >
         <Image alt="memoji" src={memoji} unoptimized={false} />
       </div>
       <div className={classes.about}>
-        <p className={classes.username} style={inlineStylesFg}>
+        <p className={classes.username} style={applyStyle("color")}>
           Martin Robbie
         </p>
-        <p className={classes.location} style={inlineStylesFg}>
+        <p className={classes.location} style={applyStyle("color")}>
           New York, USA
         </p>
       </div>
@@ -45,7 +45,7 @@ export function Sample2() {
 
 function StatItem({ subheading, value }: { subheading: string; value: string }) {
   return (
-    <li className={classes.stat} style={inlineStylesFg}>
+    <li className={classes.stat} style={applyStyle("color")}>
       <span className={classes.statSubHeading}>{subheading}</span>
       <p className={classes.statValue}>{value}</p>
     </li>

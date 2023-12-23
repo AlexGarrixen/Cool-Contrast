@@ -4,7 +4,7 @@ import { stack } from "@root/styled-system/patterns";
 import { Button } from "@/components/primitives/button";
 import { FingerprintLine } from "@/components/icons";
 
-import { inlineStylesBg, inlineStylesFg, cssBgVar, cssFgVar } from "./utils";
+import { cssBgVar, cssFgVar, applyStyle } from "./utils";
 
 const classes = {
   root: stack({ gap: "6", p: "6", rounded: "xl" }),
@@ -15,19 +15,26 @@ const classes = {
 
 export function Sample1() {
   return (
-    <article className={classes.root} style={inlineStylesBg}>
-      <div className={classes.icon} style={inlineStylesFg}>
+    <article className={classes.root} style={applyStyle("bg")}>
+      <div className={classes.icon} style={applyStyle("color")}>
         <FingerprintLine />
       </div>
       <div>
-        <p className={classes.title} style={inlineStylesFg}>
+        <p className={classes.title} style={applyStyle("color")}>
           Control you card quickly and easily with one tap
         </p>
-        <p className={classes.desc} style={inlineStylesFg}>
+        <p className={classes.desc} style={applyStyle("color")}>
           Explore all the benefots of our cards with a single tap
         </p>
       </div>
-      <Button style={{ backgroundColor: cssFgVar, color: cssBgVar }}>Try Free</Button>
+      <Button
+        style={{
+          ...applyStyle("bg", { fromVar: cssFgVar }),
+          ...applyStyle("color", { fromVar: cssBgVar }),
+        }}
+      >
+        Try Free
+      </Button>
     </article>
   );
 }

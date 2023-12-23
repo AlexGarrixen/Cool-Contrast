@@ -5,7 +5,7 @@ import { slider } from "@root/styled-system/recipes";
 import { Button } from "@/components/primitives/button";
 import { MoreFill, UploadLine } from "@/components/icons";
 
-import { inlineStylesBg, inlineStylesFg, cssFgVar, alphaVar, cssBgVar } from "./utils";
+import { cssFgVar, cssBgVar, applyStyle } from "./utils";
 
 const classes = {
   root: stack({ gap: "6", p: "6", rounded: "xl" }),
@@ -34,12 +34,15 @@ const classes = {
 
 export function Sample6() {
   return (
-    <article className={classes.root} style={inlineStylesBg}>
+    <article className={classes.root} style={applyStyle("bg")}>
       <div className={classes.moreWrapper}>
         <Button
           isIconOnly
           className={classes.moreBtn}
-          style={{ backgroundColor: cssFgVar, color: cssBgVar }}
+          style={{
+            ...applyStyle("bg", { fromVar: cssFgVar }),
+            ...applyStyle("color", { fromVar: cssBgVar }),
+          }}
           variant="solid"
         >
           <MoreFill />
@@ -48,33 +51,30 @@ export function Sample6() {
       <div className={classes.content}>
         <div
           className={classes.iconWrapper}
-          style={{ backgroundColor: cssFgVar, [alphaVar as string]: "0.16" }}
+          style={applyStyle("bg", { fromVar: cssFgVar, alpha: "0.16" })}
         >
-          <UploadLine
-            className={classes.icon}
-            style={{ ...inlineStylesFg, [alphaVar as string]: "1" }}
-          />
+          <UploadLine className={classes.icon} style={applyStyle("color", { alpha: "1" })} />
         </div>
-        <p className={classes.title} style={inlineStylesFg}>
+        <p className={classes.title} style={applyStyle("color")}>
           Your Storage
         </p>
-        <p className={classes.desc} style={inlineStylesFg}>
+        <p className={classes.desc} style={applyStyle("color")}>
           Supervise your drive in the easiest way
         </p>
       </div>
       <div>
-        <div className={classes.storeLabels} style={inlineStylesFg}>
+        <div className={classes.storeLabels} style={applyStyle("color")}>
           <span>20 Gb</span>
           <span>100 Gb</span>
         </div>
         <div className={classes.progress.root}>
           <div
             className={`${classes.progress.track} ${css({ height: "3!" })}`}
-            style={{ backgroundColor: cssFgVar, [alphaVar as string]: "0.16" }}
+            style={applyStyle("bg", { fromVar: cssFgVar, alpha: "0.16" })}
           >
             <div
               className={classes.progress.range}
-              style={{ width: "20%", backgroundColor: cssFgVar, [alphaVar as string]: "1" }}
+              style={{ width: "20%", ...applyStyle("bg", { fromVar: cssFgVar, alpha: "1" }) }}
             />
           </div>
         </div>
