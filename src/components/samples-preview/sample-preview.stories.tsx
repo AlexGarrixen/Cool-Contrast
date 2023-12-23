@@ -10,6 +10,7 @@ import { Sample5 } from "./sample-5";
 import { Sample6 } from "./sample-6";
 import { Sample7 } from "./sample-7";
 import { Sample8 } from "./sample-8";
+import { Sample9 } from "./sample-9";
 import { bgVar, fgVar } from "./utils";
 
 export default {
@@ -70,4 +71,9 @@ export const Sample_7: Story = {
 export const Sample_8: Story = {
   name: "Sample 8",
   render: () => <Sample8 />,
+};
+
+export const Sample_9: Story = {
+  name: "Sample 9",
+  render: () => <Sample9 />,
 };

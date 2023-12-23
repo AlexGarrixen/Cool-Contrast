@@ -1,5 +1,7 @@
 export { default as ChangeFill } from "./ChangeFill";
 
+export { default as ChartBarFill } from "./ChartBarFill";
+
 export { default as CheckFill } from "./CheckFill";
 
 export { default as CloseFill } from "./CloseFill";
