@@ -20,6 +20,8 @@ export { default as PencilFill } from "./PencilFill";
 
 export { default as SettingsFill } from "./SettingsFill";
 
+export { default as SuitcaseFill } from "./SuitcaseFill";
+
 export { default as UnhappyFill } from "./UnhappyFill";
 
 export { default as UploadLine } from "./UploadLine";
