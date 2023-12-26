@@ -11,7 +11,6 @@ import { Sample6 } from "./sample-6";
 import { Sample7 } from "./sample-7";
 import { Sample8 } from "./sample-8";
 import { Sample9 } from "./sample-9";
-import { Sample10 } from "./sample-10";
 import { Sample11 } from "./sample-11";
 import { Sample12 } from "./sample-12";
 import { Sample13 } from "./sample-13";
@@ -80,11 +79,6 @@ export const Sample_8: Story = {
 export const Sample_9: Story = {
   name: "Sample 9",
   render: () => <Sample9 />,
-};
-
-export const Sample_10: Story = {
-  name: "Sample 10",
-  render: () => <Sample10 />,
 };
 
 export const Sample_11: Story = {
