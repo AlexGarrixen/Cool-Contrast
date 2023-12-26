@@ -31,6 +31,7 @@ export function Sample7() {
           ...applyStyle("bg", { fromVar: cssFgVar }),
           ...applyStyle("color", { fromVar: cssBgVar }),
         }}
+        variant="solid"
       >
         Go settings
       </Button>

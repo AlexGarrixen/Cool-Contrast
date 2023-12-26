@@ -46,6 +46,7 @@ export function Sample3() {
             ...applyStyle("bg", { fromVar: cssFgVar }),
             ...applyStyle("color", { fromVar: cssBgVar }),
           }}
+          variant="solid"
         >
           Update
         </Button>
