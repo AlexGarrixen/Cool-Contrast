@@ -13,6 +13,7 @@ const classes = {
     rounded: "xl",
     display: "flex",
     alignItems: "center",
+    overflow: "hidden",
   }),
   heading: css({ textStyle: "body-lg", fontWeight: "500" }),
   icon: circle({ size: "16", fontSize: "icon-32" }),
