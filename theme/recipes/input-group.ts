@@ -10,6 +10,7 @@ export default defineSlotRecipe({
         flex: 1,
         outline: "none",
         border: "none!",
+        width: "100%",
       },
     },
     startContent: { display: "inline-flex", alignItems: "center" },
