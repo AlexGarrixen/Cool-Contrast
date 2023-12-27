@@ -1,4 +1,6 @@
-import { GithubFill } from "@/components/icons";
+import { button } from "@root/styled-system/recipes";
+
+import { GithubFill, Coffee, Brand } from "@/components/icons";
 
 import classes from "./navbar.styled";
 
@@ -6,12 +8,26 @@ export function Navbar() {
   return (
     <header className={classes.header}>
       <nav className={classes.nav}>
-        <div className={classes.logo}>Inspect Color Contrast</div>
+        <div className={classes.logo}>
+          <Brand className={`${classes.leftIcon} ${classes.icon}`} />
+          Cool Contrast
+        </div>
         <div className={classes.rightContent}>
-          <a className={classes.support} href="/">
-            ☕ Buy me a coffee
+          <a
+            className={button({ variant: "solid-white" })}
+            href="https://www.buymeacoffee.com"
+            rel="noopener"
+            target="_blank"
+          >
+            <Coffee className={`${classes.leftIcon} ${classes.icon}`} />
+            <span>Buy me a coffee</span>
           </a>
-          <a href="/">
+          <a
+            className={button({ variant: "solid-white" })}
+            href="https://github.com"
+            rel="noopener"
+            target="_blank"
+          >
             <GithubFill className={classes.icon} />
           </a>
         </div>

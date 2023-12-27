@@ -1,3 +1,5 @@
+export { default as Brand } from "./Brand";
+
 export { default as ChangeFill } from "./ChangeFill";
 
 export { default as ChartBarFill } from "./ChartBarFill";
@@ -5,6 +7,8 @@ export { default as ChartBarFill } from "./ChartBarFill";
 export { default as CheckFill } from "./CheckFill";
 
 export { default as CloseFill } from "./CloseFill";
+
+export { default as Coffee } from "./Coffee";
 
 export { default as EmojiVeryHappyFill } from "./EmojiVeryHappyFill";
 
