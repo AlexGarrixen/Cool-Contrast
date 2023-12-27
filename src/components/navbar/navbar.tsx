@@ -14,6 +14,7 @@ export function Navbar() {
         </div>
         <div className={classes.rightContent}>
           <a
+            aria-label="buy me a coffee"
             className={button({ variant: "solid-white" })}
             href="https://www.buymeacoffee.com"
             rel="noopener"
@@ -23,6 +24,7 @@ export function Navbar() {
             <span className={classes.btnLabel}>Buy me a coffee</span>
           </a>
           <a
+            aria-label="star on github"
             className={button({ variant: "solid-white" })}
             href="https://github.com"
             rel="noopener"

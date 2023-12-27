@@ -38,6 +38,7 @@ export function Sample6() {
       <div className={classes.moreWrapper}>
         <Button
           isIconOnly
+          aria-label="more button"
           className={classes.moreBtn}
           style={{
             ...applyStyle("bg", { fromVar: cssFgVar }),
