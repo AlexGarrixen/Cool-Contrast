@@ -9,7 +9,7 @@ export function Navbar() {
     <header className={classes.header}>
       <nav className={classes.nav}>
         <div className={classes.logo}>
-          <Brand className={`${classes.leftIcon} ${classes.icon}`} />
+          <Brand className={`${classes.icon} ${classes.logoIcon}`} />
           Cool Contrast
         </div>
         <div className={classes.rightContent}>
@@ -20,7 +20,7 @@ export function Navbar() {
             target="_blank"
           >
             <Coffee className={`${classes.leftIcon} ${classes.icon}`} />
-            <span>Buy me a coffee</span>
+            <span className={classes.btnLabel}>Buy me a coffee</span>
           </a>
           <a
             className={button({ variant: "solid-white" })}

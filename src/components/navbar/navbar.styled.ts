@@ -13,8 +13,15 @@ export default {
     mt: "6",
     gap: "5",
   }),
-  logo: css({ textStyle: "display-xs", fontWeight: "bold", display: "flex", alignItems: "center" }),
+  logo: css({
+    textStyle: "display-xs",
+    fontWeight: "bold",
+    display: "flex",
+    alignItems: "center",
+  }),
+  logoIcon: css({ marginRight: "2" }),
   rightContent: stack({ gap: "4", direction: "row", align: "center" }),
-  leftIcon: css({ mr: "2" }),
+  leftIcon: css({ sm: { marginRight: "2" } }),
   icon: css({ fontSize: "icon-24" }),
+  btnLabel: css({ display: "none", sm: { display: "block" } }),
 };
