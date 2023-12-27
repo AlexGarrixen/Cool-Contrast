@@ -32,5 +32,7 @@ export default {
     w: "8",
     rounded: "999px",
     mr: "1",
+    border: "1px solid",
+    borderColor: "border-secondary",
   }),
 };
