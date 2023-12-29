@@ -5,15 +5,15 @@ export default {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    p: "4",
-    background: "bg-primary-solid",
-    rounded: "lg",
-    md: {
-      width: "320px",
-    },
+    pr: { md: "6" },
+    pb: { base: "6", md: "0" },
+    width: { base: "100%", md: "30%" },
+    borderRight: { md: "1px solid" },
+    borderBottom: { base: "1px solid", md: "none" },
+    borderColor: "border-secondary!",
   }),
 
-  subheading: css({ textStyle: "body-xs", color: "white", mb: "8" }),
+  subheading: css({ textStyle: "body-xs", color: "text-primary", mb: "8" }),
 
   scoreWrapper: css({
     display: "flex",
@@ -23,7 +23,7 @@ export default {
 
   feedback: css({
     textStyle: "body-lg",
-    mb: "2",
+    mb: "1",
     fontWeight: "500",
     display: "block",
     textTransform: "capitalize",

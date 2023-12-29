@@ -5,11 +5,6 @@ export default {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    p: "3",
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "border-secondary",
-    rounded: "lg",
   }),
 
   textType: css({ color: "text-secondary", textStyle: "body-xs", mb: "2" }),
