@@ -12,7 +12,7 @@ export function ColorInputs() {
       className={css({
         display: "flex",
         flexDirection: "column",
-        mt: "5",
+        mt: "8",
         gap: "5",
         alignItems: "center",
         md: { flexDirection: "row", gap: "8" },

@@ -10,7 +10,7 @@ export default {
     flexWrap: "wrap",
     pb: "3",
     color: "text-primary",
-    mt: "6",
+    mt: "8",
     gap: "5",
   }),
   logo: css({

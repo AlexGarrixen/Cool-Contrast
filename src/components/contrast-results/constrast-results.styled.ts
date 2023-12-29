@@ -6,7 +6,7 @@ export default {
     flexDirection: "column",
     gap: "6",
     p: "5",
-    mt: "5",
+    mt: "6",
     backgroundColor: "bg-primary",
     rounded: "xl",
     shadow: "xs",
