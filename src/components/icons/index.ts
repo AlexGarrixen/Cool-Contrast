@@ -18,6 +18,8 @@ export { default as GithubFill } from "./GithubFill";
 
 export { default as HappyFill } from "./HappyFill";
 
+export { default as LinkFill } from "./LinkFill";
+
 export { default as MagicFill } from "./MagicFill";
 
 export { default as MoreFill } from "./MoreFill";
@@ -25,6 +27,8 @@ export { default as MoreFill } from "./MoreFill";
 export { default as PencilFill } from "./PencilFill";
 
 export { default as SettingsFill } from "./SettingsFill";
+
+export { default as SocialXFill } from "./SocialXFill";
 
 export { default as SuitcaseFill } from "./SuitcaseFill";
 
