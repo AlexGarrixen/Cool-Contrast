@@ -18,6 +18,8 @@ export { default as GithubFill } from "./GithubFill";
 
 export { default as HappyFill } from "./HappyFill";
 
+export { default as MagicFill } from "./MagicFill";
+
 export { default as MoreFill } from "./MoreFill";
 
 export { default as PencilFill } from "./PencilFill";
