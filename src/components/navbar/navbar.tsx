@@ -16,7 +16,7 @@ export function Navbar() {
           <a
             aria-label="buy me a coffee"
             className={button({ variant: "solid-white" })}
-            href="https://www.buymeacoffee.com"
+            href="https://www.buymeacoffee.com/alexgarrixen"
             rel="noopener"
             target="_blank"
           >
@@ -26,7 +26,7 @@ export function Navbar() {
           <a
             aria-label="star on github"
             className={button({ variant: "solid-white" })}
-            href="https://github.com"
+            href="https://github.com/AlexGarrixen/Cool-Contrast"
             rel="noopener"
             target="_blank"
           >
