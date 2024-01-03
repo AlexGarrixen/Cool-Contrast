@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.0.0...v1.1.0) (2024-01-03)
+
+
+### Features
+
+* **navbar:** add href value to anchors ([45930c7](https://github.com/AlexGarrixen/Cool-Contrast/commit/45930c7c36fb50c07bf66cf16e72a4f139b28a3b))
+
 ## 1.0.0 (2024-01-03)
 
 
