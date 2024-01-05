@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.1.0...v1.2.0) (2024-01-05)
+
+
+### Features
+
+* add code of conduct file ([cbfe18d](https://github.com/AlexGarrixen/Cool-Contrast/commit/cbfe18de1b2a5c270083a31da6413718d854d9be))
+* add contributing file ([8ccb9cd](https://github.com/AlexGarrixen/Cool-Contrast/commit/8ccb9cd8f864ccf60162247d4f02a960e86baf83))
+
 ## [1.1.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.0.0...v1.1.0) (2024-01-03)
 
 
