@@ -31,6 +31,22 @@ Start the dev server
 npm run dev
 ```
 
+## Building
+
+```bash
+npm run panda:prepare && npm run build
+```
+
+## Testing
+
+```bash
+# execute test suites
+npm run test
+
+# generates code coverage reports 
+npm run test:coverage
+```
+
 ## License
 
 MIT License © 2023-2024-Present [Alex Garrixen](https://github.com/AlexGarrixen)
