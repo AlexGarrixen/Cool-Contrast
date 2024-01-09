@@ -7,7 +7,7 @@ import Color from "color";
 
 import { useControllable } from "@/hooks/use-controllable";
 
-import { SliderChannel as InputChannel } from "./slider-channel";
+import { InputChannel } from "./input-channel";
 import classes from "./popover-color-channels.styled";
 import { colorModes, type ColorMode } from "./utils";
 
@@ -49,7 +49,7 @@ export function PopoverColorChannels({ sourceColor, onChange }: Iprops) {
     setMode(name);
   }
 
-  function handleChangePicker(nextColor: string) {
+  function handlePickerChange(nextColor: string) {
     setColor(nextColor);
   }
 
@@ -77,7 +77,7 @@ export function PopoverColorChannels({ sourceColor, onChange }: Iprops) {
               ))}
             </select>
           </div>
-          <HexColorPicker className={classes.picker} color={color} onChange={handleChangePicker} />
+          <HexColorPicker className={classes.picker} color={color} onChange={handlePickerChange} />
           <div className={classes.channels}>
             {channels.map((value, idx) => {
               const colorMode = colorModes[mode];

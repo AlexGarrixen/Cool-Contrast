@@ -5,7 +5,7 @@ import type { ChangeEvent } from "react";
 import { Input } from "@/components/primitives/input";
 import { useControllable } from "@/hooks/use-controllable";
 
-import classes from "./slider-channel.styled";
+import classes from "./input-channel.styled";
 import { regexNumberText, regexStartWithZero } from "./utils";
 
 interface IsliderChannelProps {
@@ -16,7 +16,7 @@ interface IsliderChannelProps {
   value?: number;
 }
 
-export function SliderChannel({ label, onChange, max = 100, min = 0, value }: IsliderChannelProps) {
+export function InputChannel({ label, onChange, max = 100, min = 0, value }: IsliderChannelProps) {
   const valueToString = value ? value.toString() : undefined;
   const [inputValue, setInputValue] = useControllable("0", valueToString, onChange);
 
