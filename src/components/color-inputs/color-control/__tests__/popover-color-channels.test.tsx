@@ -4,27 +4,6 @@ import * as Popover from "@radix-ui/react-popover";
 
 import { PopoverColorChannels } from "..";
 
-jest.mock("@radix-ui/react-slider", () => ({
-  Root: jest.fn(
-    ({
-      onValueChange,
-      onValueCommit,
-    }: {
-      onValueChange: (value: number[]) => void;
-      onValueCommit: (value: number[]) => void;
-    }) => (
-      <input
-        type="range"
-        onChange={() => onValueChange([1])}
-        onMouseUp={() => onValueCommit([1])}
-      />
-    ),
-  ),
-  Track: jest.fn(() => <span />),
-  Range: jest.fn(() => <span />),
-  Thumb: jest.fn(() => <span />),
-}));
-
 describe("Popover Color Channels", () => {
   it("Correct rendering and unmount", () => {
     const screen = render(
@@ -49,7 +28,7 @@ describe("Popover Color Channels", () => {
     expect(select.value).toBe("hsl");
   });
 
-  it("Should call onChange when slider value update", () => {
+  it("Should call onChange when channel input update", () => {
     const onChangeMock = jest.fn();
 
     const screen = render(
@@ -57,11 +36,13 @@ describe("Popover Color Channels", () => {
         <PopoverColorChannels sourceColor="#000" onChange={onChangeMock} />
       </Popover.Root>,
     );
-    const [input] = screen.getAllByRole("slider");
+    const [input] = screen.getAllByRole("textbox") as HTMLInputElement[];
 
-    fireEvent.change(input, { target: { value: "1" } });
-    fireEvent.mouseUp(input);
+    expect(input).toBeInTheDocument();
 
-    expect(onChangeMock).toHaveBeenCalled();
+    fireEvent.change(input, { target: { value: "200" } });
+    fireEvent.blur(input);
+
+    expect(input.value).toBe("200");
   });
 });

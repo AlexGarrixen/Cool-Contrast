@@ -9,30 +9,23 @@ export default {
     borderColor: "border-secondary",
     width: "64",
     overflow: "hidden",
+    p: "4",
+  }),
+
+  picker: css({
+    width: "100%!",
+    height: "170px!",
   }),
 
   colorModes: css({
     position: "relative",
-    borderBottom: "1px solid",
-    borderColor: "border-secondary",
-    px: "5",
-    py: "3",
+    mb: "3",
     display: "flex",
     justifyContent: "space-between",
+    "& > span": { fontWeight: "500" },
   }),
 
-  channels: css({ display: "grid", gap: "6", px: "5", py: "6" }),
+  channels: css({ display: "grid", gap: "3", mt: "5" }),
 
   select: css({ outline: "none", textTransform: "capitalize" }),
-
-  channelActive: css({ borderColor: "bg-primary-solid!" }),
-
-  preview: css({
-    h: "8",
-    w: "8",
-    rounded: "999px",
-    mr: "1",
-    border: "1px solid",
-    borderColor: "border-secondary",
-  }),
 };

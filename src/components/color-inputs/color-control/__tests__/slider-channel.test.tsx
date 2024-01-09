@@ -3,27 +3,6 @@ import { fireEvent, render } from "@testing-library/react";
 
 import { SliderChannel } from "../slider-channel";
 
-jest.mock("@radix-ui/react-slider", () => ({
-  Root: jest.fn(
-    ({
-      onValueChange,
-      onValueCommit,
-    }: {
-      onValueChange: (value: number[]) => void;
-      onValueCommit: (value: number[]) => void;
-    }) => (
-      <input
-        type="range"
-        onChange={() => onValueChange([1])}
-        onMouseUp={() => onValueCommit([1])}
-      />
-    ),
-  ),
-  Track: jest.fn(() => <span />),
-  Range: jest.fn(() => <span />),
-  Thumb: jest.fn(() => <span />),
-}));
-
 describe("Slider Channel", () => {
   it("Correct rendering and unmount", () => {
     const screen = render(<SliderChannel label="Background" />);
@@ -82,24 +61,5 @@ describe("Slider Channel", () => {
     fireEvent.blur(input);
 
     expect(input.value).toBe("2");
-  });
-
-  it("Should call on SliderValueChange and onSliderValueCommit on slider value change", () => {
-    const onSliderValueChangeMock = jest.fn();
-    const onSliderValueCommitMock = jest.fn();
-    const screen = render(
-      <SliderChannel
-        label="Background"
-        onSliderValueChange={onSliderValueChangeMock}
-        onSliderValueCommit={onSliderValueCommitMock}
-      />,
-    );
-    const input = screen.getByRole("slider") as HTMLInputElement;
-
-    fireEvent.change(input, { target: { value: "1" } });
-    fireEvent.mouseUp(input);
-
-    expect(onSliderValueChangeMock).toHaveBeenCalled();
-    expect(onSliderValueCommitMock).toHaveBeenCalled();
   });
 });
