@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.2.0...v1.3.0) (2024-01-09)
+
+
+### Features
+
+* **contrast suggestions:** improve color scale generator ([555281f](https://github.com/AlexGarrixen/Cool-Contrast/commit/555281f0d48302c51d298952c2e8de9ad2ba2d81))
+
+
+### Bug Fixes
+
+* **components:** remove directive use client of google analytics ([bdce2fe](https://github.com/AlexGarrixen/Cool-Contrast/commit/bdce2fe67895690345001c2457b96c18932880a5))
+
 ## [1.2.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.1.0...v1.2.0) (2024-01-05)
 
 
