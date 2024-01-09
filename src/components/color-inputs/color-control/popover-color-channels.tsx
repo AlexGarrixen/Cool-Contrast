@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useMemo, useRef } from "react";
+import { useState, useMemo } from "react";
+import { HexColorPicker } from "react-colorful";
 import * as Popover from "@radix-ui/react-popover";
 import Color from "color";
 
 import { useControllable } from "@/hooks/use-controllable";
 
-import { SliderChannel } from "./slider-channel";
+import { SliderChannel as InputChannel } from "./slider-channel";
 import classes from "./popover-color-channels.styled";
 import { colorModes, type ColorMode } from "./utils";
 
@@ -19,7 +20,6 @@ export function PopoverColorChannels({ sourceColor, onChange }: Iprops) {
   const [color, setColor] = useControllable("#000", sourceColor, onChange);
   const [mode, setMode] = useState<keyof ColorMode>("rgb");
   const modesList = useMemo(() => Object.keys(colorModes), []);
-  const colorPreviewRef = useRef<HTMLDivElement>(null);
   const channels = useMemo(
     () => colorModes[mode].converter(color).map((v) => Math.floor(v)),
     [mode, color],
@@ -49,15 +49,8 @@ export function PopoverColorChannels({ sourceColor, onChange }: Iprops) {
     setMode(name);
   }
 
-  const handleChangeSliderValue = (index: number) => (channelValue: number) => {
-    const nextChannels = updateChannel(channels, channelValue, index);
-    const resolvedColor = Color(nextChannels, mode).hex();
-
-    updateColorPreview(resolvedColor);
-  };
-
-  function updateColorPreview(value: string) {
-    if (colorPreviewRef.current) colorPreviewRef.current.style.backgroundColor = value;
+  function handleChangePicker(nextColor: string) {
+    setColor(nextColor);
   }
 
   return (
@@ -70,11 +63,7 @@ export function PopoverColorChannels({ sourceColor, onChange }: Iprops) {
       >
         <div>
           <div className={classes.colorModes}>
-            <span
-              ref={colorPreviewRef}
-              className={classes.preview}
-              style={{ backgroundColor: color }}
-            />
+            <span>Color Space</span>
             <select
               aria-label="select color mode"
               className={classes.select}
@@ -88,20 +77,19 @@ export function PopoverColorChannels({ sourceColor, onChange }: Iprops) {
               ))}
             </select>
           </div>
+          <HexColorPicker className={classes.picker} color={color} onChange={handleChangePicker} />
           <div className={classes.channels}>
             {channels.map((value, idx) => {
               const colorMode = colorModes[mode];
 
               return (
-                <SliderChannel
+                <InputChannel
                   key={`${value}-${colorMode.channels[idx].label}`}
                   label={colorMode.channels[idx].label}
                   max={colorMode.channels[idx].max}
                   min={colorMode.channels[idx].min}
                   value={value}
                   onChange={handleChannelChange(idx)}
-                  onSliderValueChange={handleChangeSliderValue(idx)}
-                  onSliderValueCommit={handleChannelChange(idx)}
                 />
               );
             })}
