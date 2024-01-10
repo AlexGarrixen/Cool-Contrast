@@ -11,7 +11,7 @@ export function BackgroundInput() {
   const [bg, setBg] = useAtom(background);
 
   return (
-    <Panel label="BACKGROUND">
+    <Panel color={bg} label="Background Color">
       <ColorControl
         popover={<PopoverColorChannels sourceColor={bg} onChange={setBg} />}
         sourceColor={bg}

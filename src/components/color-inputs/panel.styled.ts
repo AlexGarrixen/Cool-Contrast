@@ -1,18 +1,23 @@
 import { css } from "@root/styled-system/css";
 
 export default {
-  root: css({ backgroundColor: "bg-primary", rounded: "xl", shadow: "xs", flex: 1, width: "100%" }),
+  root: css({ display: "flex", alignItems: "center", flex: 1, width: "100%", gap: "4" }),
 
-  header: css({
+  label: css({
     color: "text-primary",
-    py: "4",
-    px: "5",
-    borderBottomWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "border-secondary",
-    textAlign: "center",
     fontWeight: "bold",
+    display: "block",
+    mb: "3",
   }),
 
-  body: css({ px: "5", py: "8" }),
+  rightContent: css({ flex: 1 }),
+
+  preview: css({
+    w: "20",
+    h: "20",
+    shadow: "sm",
+    rounded: "xl",
+    border: "1px solid",
+    borderColor: "border-secondary",
+  }),
 };
