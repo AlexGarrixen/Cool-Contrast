@@ -11,7 +11,7 @@ export function ForegroundInput() {
   const [fg, setFg] = useAtom(foreground);
 
   return (
-    <Panel label="TEXT COLOR">
+    <Panel color={fg} label="Text Color">
       <ColorControl
         popover={<PopoverColorChannels sourceColor={fg} onChange={setFg} />}
         sourceColor={fg}

@@ -43,7 +43,6 @@ export function ColorInput({ value: valueProp, onChange }: Iprops) {
           </button>
         </Popover.Trigger>
       }
-      startContent={<span className={classes.colorPreview} style={{ backgroundColor: value }} />}
     >
       <Input
         placeholder={fallback}
