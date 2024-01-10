@@ -1,5 +1,3 @@
-import { button } from "@root/styled-system/recipes";
-
 import { GithubFill, Coffee, Brand } from "@/components/icons";
 
 import classes from "./navbar.styled";
@@ -15,7 +13,7 @@ export function Navbar() {
         <div className={classes.rightContent}>
           <a
             aria-label="buy me a coffee"
-            className={button({ variant: "solid-white" })}
+            className={classes.link}
             href="https://www.buymeacoffee.com/alexgarrixen"
             rel="noopener"
             target="_blank"
@@ -25,12 +23,13 @@ export function Navbar() {
           </a>
           <a
             aria-label="star on github"
-            className={button({ variant: "solid-white" })}
+            className={classes.link}
             href="https://github.com/AlexGarrixen/Cool-Contrast"
             rel="noopener"
             target="_blank"
           >
-            <GithubFill className={classes.icon} />
+            <GithubFill className={`${classes.leftIcon} ${classes.icon}`} />
+            <span className={classes.btnLabel}>Github</span>
           </a>
         </div>
       </nav>
