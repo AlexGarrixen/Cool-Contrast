@@ -4,14 +4,18 @@ import classes from "./panel.styled";
 
 interface Iprops {
   label: string;
+  color?: string;
   children?: ReactNode;
 }
 
-export function Panel({ label, children }: Iprops) {
+export function Panel({ label, children, color }: Iprops) {
   return (
     <div className={classes.root}>
-      <header className={classes.header}>{label}</header>
-      <div className={classes.body}>{children}</div>
+      <div className={classes.preview} style={{ backgroundColor: color }} />
+      <div className={classes.rightContent}>
+        <label className={classes.label}>{label}</label>
+        <div>{children}</div>
+      </div>
     </div>
   );
 }
