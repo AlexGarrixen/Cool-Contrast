@@ -2,9 +2,10 @@
 
 import { useAtom, useAtomValue } from "jotai";
 import * as Dialog from "@radix-ui/react-dialog";
+import { css } from "@root/styled-system/css";
 
 import { Button } from "@/components/primitives/button";
-import { MagicFill, CloseFill } from "@/components/icons";
+import { LightFill, CloseFill } from "@/components/icons";
 import { background, foreground, contrastRelation } from "@/store";
 import { createContrastSuggestions } from "@/lib/contrast-suggestions";
 
@@ -14,8 +15,8 @@ export function SuggestionsButton() {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Button isIconOnly aria-label="swap button">
-          <MagicFill />
+        <Button isIconOnly aria-label="swap button" className={css({ fontSize: "icon-20" })}>
+          <LightFill />
         </Button>
       </Dialog.Trigger>
       <SuggestionsDialog />

@@ -4,7 +4,7 @@ import type { ChangeEvent } from "react";
 
 import * as Popover from "@radix-ui/react-popover";
 
-import { SettingsFill } from "@/components/icons";
+import { ColorPickerFill } from "@/components/icons";
 import { Input } from "@/components/primitives/input";
 import { InputGroup } from "@/components/primitives/input-group";
 import { useControllable } from "@/hooks/use-controllable";
@@ -39,7 +39,7 @@ export function ColorInput({ value: valueProp, onChange }: Iprops) {
       endContent={
         <Popover.Trigger asChild>
           <button aria-label="settings button" className={classes.settings} type="button">
-            <SettingsFill className={classes.icon} />
+            <ColorPickerFill className={classes.icon} />
           </button>
         </Popover.Trigger>
       }
