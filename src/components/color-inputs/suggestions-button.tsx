@@ -1,27 +1,17 @@
 "use client";
 
-import { useSetAtom } from "jotai";
 import * as Dialog from "@radix-ui/react-dialog";
 import { css } from "@root/styled-system/css";
 
 import { Button } from "@/components/primitives/button";
 import { Suggestions } from "@/components/suggestions";
 import { LightFill, CloseFill } from "@/components/icons";
-import { background, foreground } from "@/store";
 import { useToggle } from "@/hooks/use-toggle";
 
 import classes from "./suggestions-button.styled";
 
 export function SuggestionsButton() {
   const { isEnabled: open, onOpen, onClose, setOpen } = useToggle();
-  const setFg = useSetAtom(foreground);
-  const setBg = useSetAtom(background);
-
-  function onClickApply(bg: string, fg: string) {
-    setFg(fg);
-    setBg(bg);
-    onClose();
-  }
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
@@ -51,7 +41,7 @@ export function SuggestionsButton() {
             </Dialog.Close>
           </header>
           <div className={classes.dialogBody}>
-            <Suggestions className={classes.suggestions} onApply={onClickApply} />
+            <Suggestions className={classes.suggestions} onApply={onClose} />
           </div>
         </Dialog.Content>
       </Dialog.Portal>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useAtomValue } from "jotai";
+import { useAtomValue, useAtom } from "jotai";
 
 import { background, foreground, pickingColor, contrastRelation } from "@/store";
 import { createContrastSuggestions } from "@/lib/contrast-suggestions";
@@ -15,8 +15,8 @@ interface SuggestionProps extends Pick<SuggestionItemProps, "onApply"> {
 type Suggestions = ReturnType<typeof createContrastSuggestions>;
 
 export function Suggestions({ onApply, className }: SuggestionProps) {
-  const fg = useAtomValue(foreground);
-  const bg = useAtomValue(background);
+  const [fg, setFg] = useAtom(foreground);
+  const [bg, setBg] = useAtom(background);
   const isPickingColor = useAtomValue(pickingColor);
   const score = useAtomValue(contrastRelation);
   const prevSuggestions = useRef<Suggestions>([]);
@@ -29,6 +29,12 @@ export function Suggestions({ onApply, className }: SuggestionProps) {
 
   if (!isPickingColor) prevSuggestions.current = suggestions;
 
+  function handleOnApply(bg: string, fg: string) {
+    setFg(fg);
+    setBg(bg);
+    onApply?.(bg, fg);
+  }
+
   return (
     <div className={`${classes.root} ${className ?? ""}`}>
       {isEmpty ? (
@@ -36,7 +42,7 @@ export function Suggestions({ onApply, className }: SuggestionProps) {
       ) : (
         <>
           {suggestions.map((item) => (
-            <SuggestionItem key={item.id} {...item} onApply={onApply} />
+            <SuggestionItem key={item.id} {...item} onApply={handleOnApply} />
           ))}
         </>
       )}
