@@ -1,8 +1,9 @@
 "use client";
 
+import { useRef } from "react";
 import { useAtomValue } from "jotai";
 
-import { background, foreground, contrastRelation } from "@/store";
+import { background, foreground, pickingColor, contrastRelation } from "@/store";
 import { createContrastSuggestions } from "@/lib/contrast-suggestions";
 
 import classes from "./suggestions.styled";
@@ -11,14 +12,22 @@ interface SuggestionProps extends Pick<SuggestionItemProps, "onApply"> {
   className?: string;
 }
 
+type Suggestions = ReturnType<typeof createContrastSuggestions>;
+
 export function Suggestions({ onApply, className }: SuggestionProps) {
   const fg = useAtomValue(foreground);
   const bg = useAtomValue(background);
+  const isPickingColor = useAtomValue(pickingColor);
   const score = useAtomValue(contrastRelation);
-  const suggestions = createContrastSuggestions(bg, fg).filter(
-    (result) => parseFloat(result.contrast) > score.contrast,
-  );
+  const prevSuggestions = useRef<Suggestions>([]);
+  const suggestions = !isPickingColor
+    ? createContrastSuggestions(bg, fg).filter(
+        (result) => parseFloat(result.contrast) > score.contrast,
+      )
+    : prevSuggestions.current;
   const isEmpty = suggestions.length === 0;
+
+  if (!isPickingColor) prevSuggestions.current = suggestions;
 
   return (
     <div className={`${classes.root} ${className ?? ""}`}>

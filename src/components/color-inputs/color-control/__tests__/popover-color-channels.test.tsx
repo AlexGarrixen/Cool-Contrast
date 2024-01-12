@@ -1,6 +1,9 @@
 import { describe, it } from "@jest/globals";
 import { fireEvent, render } from "@testing-library/react";
 import * as Popover from "@radix-ui/react-popover";
+import { useAtom } from "jotai";
+
+import { pickingColor } from "@/store";
 
 import { PopoverColorChannels } from "..";
 
@@ -44,5 +47,32 @@ describe("Popover Color Channels", () => {
     fireEvent.blur(input);
 
     expect(input.value).toBe("200");
+  });
+
+  it("Should update the state picking when interacting with the color picker", () => {
+    function Render() {
+      const [picking] = useAtom(pickingColor);
+
+      return (
+        <>
+          {picking ? "true" : "false"}
+          <Popover.Root open>
+            <PopoverColorChannels sourceColor="#000000" />
+          </Popover.Root>
+        </>
+      );
+    }
+
+    const screen = render(<Render />);
+
+    const el = screen.getByLabelText("Color");
+
+    expect(el).toBeInTheDocument();
+
+    fireEvent.mouseDown(el);
+    expect(screen.getByText("true"));
+
+    fireEvent.mouseUp(el);
+    expect(screen.getByText("false"));
   });
 });

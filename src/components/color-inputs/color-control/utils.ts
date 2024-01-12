@@ -8,6 +8,12 @@ export const regexStartWithZero = new RegExp(/^0.*/);
 
 export const regexNumberText = new RegExp(/^[0-9]+$/);
 
+export function resolveValidColor(color: string, fallback = "#000000") {
+  if (regexColorHexadecimal.test(color)) return color;
+
+  return fallback;
+}
+
 export type ColorMode = Pick<typeof colorConvert, "rgb" | "hsl" | "cmyk" | "hsv" | "hwb">;
 
 export const colorModes: Record<

@@ -1,15 +1,17 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import { useSetAtom } from "jotai";
 import { HexColorPicker } from "react-colorful";
 import * as Popover from "@radix-ui/react-popover";
 import Color from "color";
 
 import { useControllable } from "@/hooks/use-controllable";
+import { startPickingColor, stopPickingColor } from "@/store";
 
 import { InputChannel } from "./input-channel";
 import classes from "./popover-color-channels.styled";
-import { colorModes, type ColorMode } from "./utils";
+import { colorModes, resolveValidColor, type ColorMode } from "./utils";
 
 interface Iprops {
   sourceColor?: string;
@@ -21,9 +23,13 @@ export function PopoverColorChannels({ sourceColor, onChange }: Iprops) {
   const [mode, setMode] = useState<keyof ColorMode>("rgb");
   const modesList = useMemo(() => Object.keys(colorModes), []);
   const channels = useMemo(
-    () => colorModes[mode].converter(color).map((v) => Math.floor(v)),
+    () => colorModes[mode].converter(resolveValidColor(color)).map((v) => Math.floor(v)),
     [mode, color],
   );
+
+  const onMouseDownPicker = useSetAtom(startPickingColor);
+
+  const onMouseUpPicker = useSetAtom(stopPickingColor);
 
   function updateChannel(
     channels: number[],
@@ -77,7 +83,13 @@ export function PopoverColorChannels({ sourceColor, onChange }: Iprops) {
               ))}
             </select>
           </div>
-          <HexColorPicker className={classes.picker} color={color} onChange={handlePickerChange} />
+          <HexColorPicker
+            className={classes.picker}
+            color={color}
+            onChange={handlePickerChange}
+            onMouseDown={onMouseDownPicker}
+            onMouseUp={onMouseUpPicker}
+          />
           <div className={classes.channels}>
             {channels.map((value, idx) => {
               const colorMode = colorModes[mode];
