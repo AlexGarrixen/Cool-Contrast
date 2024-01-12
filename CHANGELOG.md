@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.3.0...v1.4.0) (2024-01-12)
+
+
+### Features
+
+* add suggestions component ([c588c9e](https://github.com/AlexGarrixen/Cool-Contrast/commit/c588c9e8b787ed3c56732b7fa222eef87c56ca0e))
+* **components:** add layout ([112817e](https://github.com/AlexGarrixen/Cool-Contrast/commit/112817e4122676ce07d3897b7b6a9ab548c6cb7b))
+* **popover channels:** add color picker ([bb553a8](https://github.com/AlexGarrixen/Cool-Contrast/commit/bb553a8b8a59e68a1c3a02d33e00594a84a5b2df))
+* **revert:** restore slider recipe ([f38837e](https://github.com/AlexGarrixen/Cool-Contrast/commit/f38837e2fe47da11587853124e43e1ffe603422f))
+* **suggestions:** calculate hints only on color confirmation ([14c4b86](https://github.com/AlexGarrixen/Cool-Contrast/commit/14c4b865b76ed1d832fe48a66e8c96ec05d955a8))
+* **suggestions:** update colors on click button apply ([acd956d](https://github.com/AlexGarrixen/Cool-Contrast/commit/acd956d3e3585c811f2b86688bef6ee7be8c539b))
+
+
+### Bug Fixes
+
+* **icons story:** remove settings icon ([8df9052](https://github.com/AlexGarrixen/Cool-Contrast/commit/8df905270af8036fa21bd59905f85fc55362f6a6))
+
 ## [1.3.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.2.0...v1.3.0) (2024-01-09)
 
 
