@@ -29,7 +29,11 @@ export function SuggestionsButton() {
         <Button
           isIconOnly
           aria-label="swap button"
-          className={css({ fontSize: "icon-20" })}
+          className={css({
+            fontSize: "icon-24",
+            borderColor: "transparent",
+            display: { lg: "none" },
+          })}
           onClick={onOpen}
         >
           <LightFill />

@@ -14,7 +14,7 @@ export function SwapButton() {
     <Button
       isIconOnly
       aria-label="swap button"
-      className={css({ fontSize: "icon-20" })}
+      className={css({ fontSize: "icon-24", borderColor: "transparent" })}
       onClick={swap}
     >
       <InvertFill />

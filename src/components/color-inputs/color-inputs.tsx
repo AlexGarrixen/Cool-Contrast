@@ -10,17 +10,13 @@ export function ColorInputs() {
   return (
     <section
       className={css({
-        backgroundColor: "bg-primary",
-        shadow: "xs",
-        rounded: "xl",
         display: "flex",
         flexDirection: "column",
-        mt: "8",
-        p: "5",
+        mt: "16",
         alignItems: "center",
         gap: "8",
         md: { flexDirection: "row" },
-        lg: { gap: "16" },
+        lg: { gap: "12" },
       })}
     >
       <BackgroundInput />
