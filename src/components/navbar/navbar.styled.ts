@@ -1,17 +1,13 @@
 import { css } from "@root/styled-system/css";
-import { stack, container } from "@root/styled-system/patterns";
+import { stack } from "@root/styled-system/patterns";
 
 export default {
-  header: container(),
-
   nav: css({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     flexWrap: "wrap",
-    pb: "3",
     color: "text-primary",
-    mt: "8",
     gap: "5",
   }),
 
