@@ -3,7 +3,7 @@ import { css } from "@root/styled-system/css";
 import { SamplesGrid } from "./samples-grid";
 
 const classes = {
-  root: css({ my: "8", bgColor: "bg-primary", p: "5", rounded: "xl", shadow: "xs" }),
+  root: css({ mt: "16", mb: "8" }),
 };
 
 export function SamplesPreview() {
