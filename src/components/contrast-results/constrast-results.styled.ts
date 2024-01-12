@@ -4,12 +4,9 @@ export default {
   root: css({
     display: "flex",
     flexDirection: "column",
-    gap: "6",
-    p: "5",
-    mt: "6",
+    gap: "8",
+    mt: "8",
     backgroundColor: "bg-primary",
-    rounded: "xl",
-    shadow: "xs",
     md: {
       flexDirection: "row",
       alignItems: "center",
