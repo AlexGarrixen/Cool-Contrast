@@ -1,26 +1,28 @@
 "use client";
 
-import type { ReactNode } from "react";
-
-import * as Popover from "@radix-ui/react-popover";
-
-import { useToggle } from "@/hooks/use-toggle";
-
 import { ColorInput } from "./color-input";
+import { ButtonPicker } from "./button-picker";
+import { ButtonClipboard } from "./button-clipboard";
+import classes from "./color-control.styled";
 
 interface Iprops {
-  popover: ReactNode;
+  label?: string;
   sourceColor?: string;
   onChange?: (color: string) => void;
 }
 
-export function ColorControl({ popover, sourceColor, onChange }: Iprops) {
-  const { isEnabled: isOpen, setOpen } = useToggle();
-
+export function ColorControl({ sourceColor, onChange, label }: Iprops) {
   return (
-    <Popover.Root open={isOpen} onOpenChange={setOpen}>
-      <ColorInput value={sourceColor} onChange={onChange} />
-      {isOpen ? popover : null}
-    </Popover.Root>
+    <div className={classes.root}>
+      <div className={classes.preview} style={{ backgroundColor: sourceColor }} />
+      <div className={classes.content}>
+        <label className={classes.label}>{label}</label>
+        <ColorInput value={sourceColor} onChange={onChange} />
+      </div>
+      <div className={classes.actions}>
+        <ButtonPicker sourceColor={sourceColor} onChange={onChange} />
+        <ButtonClipboard color={sourceColor} />
+      </div>
+    </div>
   );
 }

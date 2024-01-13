@@ -1,15 +1,16 @@
 import { css } from "@root/styled-system/css";
 
 export default {
-  settings: css({
-    color: "fg-primary",
-    borderLeft: "1px solid",
-    borderColor: "border-secondary",
-    pl: "4",
-    my: "2",
-    display: "inline-block",
-    cursor: "pointer",
-  }),
+  root: css({ display: "flex", alignItems: "center", gap: "1", flex: 1 }),
 
-  icon: css({ fontSize: "icon-20" }),
+  icon: css({ fontSize: "icon-24" }),
+
+  input: css({
+    textStyle: "display-md",
+    fontWeight: "500",
+    width: "100%",
+    "&:focus": {
+      outlineColor: "text-primary",
+    },
+  }),
 };

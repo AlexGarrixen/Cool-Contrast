@@ -2,12 +2,13 @@ import { describe, it } from "@jest/globals";
 import { fireEvent, render } from "@testing-library/react";
 import { useState } from "react";
 
-import { ColorControl, PopoverColorChannels } from "..";
+import { ColorControl } from "..";
 
 describe("Color Control", () => {
   it("Correct rendering and unmount", () => {
-    const screen = render(<ColorControl popover={<PopoverColorChannels />} />);
+    const screen = render(<ColorControl label="Background" />);
 
+    expect(screen.getByText("Background")).toBeInTheDocument();
     expect(() => screen.unmount()).not.toThrow();
   });
 
@@ -15,13 +16,7 @@ describe("Color Control", () => {
     function Render() {
       const [value, setValue] = useState("#000");
 
-      return (
-        <ColorControl
-          popover={<PopoverColorChannels />}
-          sourceColor={value}
-          onChange={(value) => setValue(value)}
-        />
-      );
+      return <ColorControl sourceColor={value} onChange={(value) => setValue(value)} />;
     }
 
     const screen = render(<Render />);
@@ -35,8 +30,8 @@ describe("Color Control", () => {
   });
 
   it("Should show popover color channels", () => {
-    const screen = render(<ColorControl popover={<PopoverColorChannels />} />);
-    const buttonSettings = screen.getByLabelText("settings button");
+    const screen = render(<ColorControl />);
+    const [buttonSettings] = screen.getAllByLabelText("picker button");
 
     fireEvent.click(buttonSettings);
 

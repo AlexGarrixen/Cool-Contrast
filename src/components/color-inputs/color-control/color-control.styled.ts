@@ -1,16 +1,17 @@
 import { css } from "@root/styled-system/css";
+import { stack } from "@root/styled-system/patterns";
 
 export default {
   root: css({ display: "flex", alignItems: "center", flex: 1, width: "100%", gap: "4" }),
 
   label: css({
-    color: "text-primary",
-    fontWeight: "bold",
+    color: "text-secondary",
     display: "block",
-    mb: "3",
+    fontWeight: "500",
+    mb: "2",
   }),
 
-  rightContent: css({ flex: 1 }),
+  content: css({ flex: 1 }),
 
   preview: css({
     w: "20",
@@ -19,5 +20,8 @@ export default {
     rounded: "xl",
     border: "1px solid",
     borderColor: "border-secondary",
+    flexShrink: 0,
   }),
+
+  actions: stack({ gap: "1" }),
 };

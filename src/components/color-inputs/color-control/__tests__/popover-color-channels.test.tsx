@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 
 import { pickingColor } from "@/store";
 
-import { PopoverColorChannels } from "..";
+import { PopoverColorChannels } from "../popover-color-channels";
 
 describe("Popover Color Channels", () => {
   it("Correct rendering and unmount", () => {

@@ -21,7 +21,6 @@ export function SuggestionsButton() {
           aria-label="swap button"
           className={css({
             fontSize: "icon-24",
-            borderColor: "transparent",
             display: { lg: "none" },
           })}
           onClick={onOpen}

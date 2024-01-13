@@ -5,3 +5,8 @@ global.ResizeObserver = jest.fn(() => ({
   disconnect: jest.fn(),
   unobserve: jest.fn(),
 }));
+
+jest.mock("@uidotdev/usehooks", () => ({
+  __esModule: true,
+  useCopyToClipboard: jest.fn(() => ["", jest.fn()]),
+}));

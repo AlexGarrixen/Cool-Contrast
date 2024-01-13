@@ -4,6 +4,8 @@ export { default as ChartBarFill } from "./ChartBarFill";
 
 export { default as CheckFill } from "./CheckFill";
 
+export { default as ClipboardLine } from "./ClipboardLine";
+
 export { default as CloseFill } from "./CloseFill";
 
 export { default as Coffee } from "./Coffee";

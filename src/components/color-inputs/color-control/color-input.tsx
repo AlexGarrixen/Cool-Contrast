@@ -2,12 +2,9 @@
 
 import type { ChangeEvent } from "react";
 
-import * as Popover from "@radix-ui/react-popover";
-
-import { ColorPickerFill } from "@/components/icons";
-import { Input } from "@/components/primitives/input";
-import { InputGroup } from "@/components/primitives/input-group";
 import { useControllable } from "@/hooks/use-controllable";
+import { InputGroup } from "@/components/primitives/input-group";
+import { PencilFill } from "@/components/icons";
 
 import { regexColorHexadecimal } from "./utils";
 import classes from "./color-input.styled";
@@ -24,7 +21,6 @@ export function ColorInput({ value: valueProp, onChange }: Iprops) {
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     const nextValue = e.target.value;
-
     const omitOnChange = !regexColorHexadecimal.test(nextValue);
 
     setValue(nextValue, omitOnChange);
@@ -35,22 +31,16 @@ export function ColorInput({ value: valueProp, onChange }: Iprops) {
   }
 
   return (
-    <InputGroup
-      endContent={
-        <Popover.Trigger asChild>
-          <button aria-label="settings button" className={classes.settings} type="button">
-            <ColorPickerFill className={classes.icon} />
-          </button>
-        </Popover.Trigger>
-      }
-    >
-      <Input
+    <div className={classes.root}>
+      <PencilFill className={classes.icon} />
+      <input
+        className={classes.input}
         placeholder={fallback}
         type="text"
         value={value}
         onBlur={handleBlur}
         onChange={handleChange}
       />
-    </InputGroup>
+    </div>
   );
 }
