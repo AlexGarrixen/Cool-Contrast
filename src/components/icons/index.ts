@@ -30,6 +30,8 @@ export { default as MoreFill } from "./MoreFill";
 
 export { default as PencilFill } from "./PencilFill";
 
+export { default as Play } from "./Play";
+
 export { default as SocialXFill } from "./SocialXFill";
 
 export { default as SuitcaseFill } from "./SuitcaseFill";
