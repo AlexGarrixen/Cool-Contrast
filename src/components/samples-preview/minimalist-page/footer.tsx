@@ -5,7 +5,9 @@ import { applyStyle } from "../utils";
 
 const classes = {
   root: css({
-    height: "20",
+    pb: "5",
+    pt: "2",
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     gap: "8",

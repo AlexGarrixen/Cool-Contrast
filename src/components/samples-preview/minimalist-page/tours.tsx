@@ -1,4 +1,5 @@
 import { css } from "@root/styled-system/css";
+import { container } from "@root/styled-system/patterns";
 
 import { ArrowRightUpLine } from "@/components/icons";
 
@@ -91,7 +92,7 @@ const tours: TourItemProps[] = [
 
 export function Tours() {
   return (
-    <section style={applyStyle("color")}>
+    <section className={container({ w: "100%" })} style={applyStyle("color")}>
       <div className={classes.heading}>TOURS</div>
       <ul>
         {tours.map((props) => (
