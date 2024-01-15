@@ -1,3 +1,5 @@
+export { default as ArrowRightUpLine } from "./ArrowRightUpLine";
+
 export { default as Brand } from "./Brand";
 
 export { default as ChartBarFill } from "./ChartBarFill";

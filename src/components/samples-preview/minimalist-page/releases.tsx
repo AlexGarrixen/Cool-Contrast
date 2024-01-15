@@ -1,4 +1,5 @@
 import { css } from "@root/styled-system/css";
+import { container } from "@root/styled-system/patterns";
 
 import { Button } from "@/components/primitives/button";
 import { Play } from "@/components/icons";
@@ -79,7 +80,7 @@ const releases: ReleaseItemProps[] = [
 
 export function Releases() {
   return (
-    <section style={applyStyle("color")}>
+    <section className={container()} style={applyStyle("color")}>
       <div>
         <div className={classes.heading}>RELEASES</div>
         <p className={classes.desc}>Check the latest releases of Martin Garrix right here!</p>
