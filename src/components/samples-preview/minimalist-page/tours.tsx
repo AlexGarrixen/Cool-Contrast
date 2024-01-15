@@ -7,7 +7,6 @@ import { applyStyle } from "../utils";
 const classes = {
   heading: css({
     textStyle: "display-lg",
-    textAlign: "center",
     fontWeight: "bold",
     mb: "8",
     lg: { textStyle: "display-xl", mb: "12" },
