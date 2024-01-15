@@ -25,6 +25,7 @@ export default {
 
   content: css({
     flex: 1,
+    width: "100%",
     bgColor: "bg-tertiary",
   }),
 

@@ -20,7 +20,7 @@ export function SamplesGrid() {
   return (
     <ResponsiveMasonry
       className={css({ "& article": { border: "1px solid", borderColor: "border-secondary" } })}
-      columnsCountBreakPoints={{ 0: 1, 640: 2, 1024: 3 }}
+      columnsCountBreakPoints={{ 0: 1, 640: 2, 1400: 3 }}
     >
       <Masonry gutter="20px">
         <Sample1 />
