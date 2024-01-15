@@ -7,16 +7,12 @@ export default {
     gap: "8",
     mt: "8",
     backgroundColor: "bg-primary",
-    md: {
-      flexDirection: "row",
-      alignItems: "center",
-    },
   }),
 
   levels: css({
     display: "grid",
     rowGap: "5",
-    columnGap: "12",
+    columnGap: "10",
     md: { flex: 1 },
     sm: {
       gridTemplateColumns: "repeat(2, 1fr)",

@@ -12,11 +12,8 @@ export function ColorInputs() {
       className={css({
         display: "flex",
         flexDirection: "column",
-        mt: "16",
         alignItems: "center",
         gap: "8",
-        md: { flexDirection: "row" },
-        lg: { gap: "12" },
       })}
     >
       <BackgroundInput />

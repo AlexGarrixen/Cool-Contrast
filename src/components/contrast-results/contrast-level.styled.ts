@@ -11,7 +11,7 @@ export default {
 
   contrast: css({ color: "text-primary", textStyle: "display-xs", fontWeight: "bold" }),
 
-  checkIcon: css({ color: "fg-success", fontSize: "icon-24" }),
+  checkIcon: css({ color: "fg-success", fontSize: "icon-20" }),
 
-  closeIcon: css({ color: "fg-error", fontSize: "icon-24" }),
+  closeIcon: css({ color: "fg-error", fontSize: "icon-20" }),
 };

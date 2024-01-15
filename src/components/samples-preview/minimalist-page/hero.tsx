@@ -7,7 +7,7 @@ const imgSrc =
   "https://res.cloudinary.com/dxarbtyux/image/upload/v1705261799/color-contrast-inspector/hero-bg.webp";
 
 const classes = {
-  img: css({ maxW: "100%", height: "380px", lg: { height: "500px" } }),
+  img: css({ maxW: "100%", height: "380px", objectFit: "cover", lg: { height: "460px" } }),
   brandContainer: css({ mb: "12", lg: { mb: "16" } }),
   brand: css({ maxW: "100%" }),
 };
@@ -35,7 +35,14 @@ export function Hero() {
         </svg>
       </div>
       <figure>
-        <img alt="background hero" height={500} loading="lazy" src={imgSrc} width="100%" />
+        <img
+          alt="background hero"
+          className={classes.img}
+          height={500}
+          loading="lazy"
+          src={imgSrc}
+          width="100%"
+        />
       </figure>
     </section>
   );

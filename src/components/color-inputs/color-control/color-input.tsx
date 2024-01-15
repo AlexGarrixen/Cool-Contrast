@@ -3,8 +3,6 @@
 import type { ChangeEvent } from "react";
 
 import { useControllable } from "@/hooks/use-controllable";
-import { InputGroup } from "@/components/primitives/input-group";
-import { PencilFill } from "@/components/icons";
 
 import { regexColorHexadecimal } from "./utils";
 import classes from "./color-input.styled";
@@ -31,16 +29,13 @@ export function ColorInput({ value: valueProp, onChange }: Iprops) {
   }
 
   return (
-    <div className={classes.root}>
-      <PencilFill className={classes.icon} />
-      <input
-        className={classes.input}
-        placeholder={fallback}
-        type="text"
-        value={value}
-        onBlur={handleBlur}
-        onChange={handleChange}
-      />
-    </div>
+    <input
+      className={classes.input}
+      placeholder={fallback}
+      type="text"
+      value={value}
+      onBlur={handleBlur}
+      onChange={handleChange}
+    />
   );
 }

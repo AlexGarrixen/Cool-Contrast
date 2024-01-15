@@ -10,7 +10,7 @@ import { MinimalistPage } from "./minimalist-page";
 import { fgVar, bgVar } from "./utils";
 
 const classes = {
-  root: css({ mt: "16", mb: "8" }),
+  root: css({ my: "6" }),
   text: css({ textStyle: "text-lg", textAlign: "center", mb: "3", color: "text-secondary" }),
 };
 

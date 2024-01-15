@@ -6,7 +6,7 @@ const classes = {
     py: "4",
     display: "flex",
     gap: "2",
-    bgColor: "bg-secondary",
+    bgColor: "bg-primary",
     borderBottom: "1px solid",
     borderColor: "border-secondary",
   }),
@@ -15,8 +15,11 @@ const classes = {
     w: "5",
     h: "5",
     display: "inline-block",
-    bgColor: "bg-primary",
     rounded: "xl",
+
+    "&:nth-child(1)": { bgColor: "error.500" },
+    "&:nth-child(2)": { bgColor: "warning.500" },
+    "&:nth-child(3)": { bgColor: "success.500" },
   }),
 };
 
