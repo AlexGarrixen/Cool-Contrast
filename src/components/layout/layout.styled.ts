@@ -25,7 +25,7 @@ export default {
 
   content: css({
     flex: 1,
-    bgColor: "bg-secondary",
+    bgColor: "bg-tertiary",
   }),
 
   aside: css({
