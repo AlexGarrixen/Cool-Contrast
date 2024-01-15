@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.5.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.4.0...v1.5.0) (2024-01-15)
+
+
+### Features
+
+* **page preview:** add about ([b813f28](https://github.com/AlexGarrixen/Cool-Contrast/commit/b813f28dcc22ae0d30ac7684d30a1149b5e475bb))
+* **page preview:** add episode ([acc9862](https://github.com/AlexGarrixen/Cool-Contrast/commit/acc986289722efd2d0895990ddd362a77bad126d))
+* **page preview:** add footer ([320b66e](https://github.com/AlexGarrixen/Cool-Contrast/commit/320b66ecd2dedb2b780fdca64e0a10135da2e990))
+* **page preview:** add hero ([b022581](https://github.com/AlexGarrixen/Cool-Contrast/commit/b02258181b7f31e86061d76ea88a34178f18d74f))
+* **page preview:** add navbar ([2aed49d](https://github.com/AlexGarrixen/Cool-Contrast/commit/2aed49de28f8bc7fd0ffbda1e3640a1ae56e01e4))
+* **page preview:** add releases ([9928f8f](https://github.com/AlexGarrixen/Cool-Contrast/commit/9928f8fc634e7d9f42ab045db13033747a8d7af9))
+* **page preview:** add tours ([90f7474](https://github.com/AlexGarrixen/Cool-Contrast/commit/90f7474c8b568da3394a1e6a61f6a58dcf3115a7))
+* **samples preview:** add minimalist page ([a8c3d90](https://github.com/AlexGarrixen/Cool-Contrast/commit/a8c3d90926fc25d58039ecdca85096bb597415f4))
+* **samples preview:** toggle preview modes ([3e75a18](https://github.com/AlexGarrixen/Cool-Contrast/commit/3e75a18d7e546df09f99dab329ff53c1bd954ffb))
+* **store:** change initial colors ([234f629](https://github.com/AlexGarrixen/Cool-Contrast/commit/234f6294fbea32d5252325c33a994ac8138ed866))
+
+
+### Bug Fixes
+
+* **icons:** update fill property value of arrow rIght up ([351547c](https://github.com/AlexGarrixen/Cool-Contrast/commit/351547cdc672a493521d090ca9c0cd11ebe3fdf4))
+* **samples preview:** modify  columns count breakpoints in ui elements grid ([116ee76](https://github.com/AlexGarrixen/Cool-Contrast/commit/116ee76bd20ee59e1a57caf4ba736fbf95a9ad7b))
+
 ## [1.4.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.3.0...v1.4.0) (2024-01-12)
 
 
