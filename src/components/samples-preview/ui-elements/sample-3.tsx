@@ -6,7 +6,7 @@ import avatar from "@root/public/sample-3-avatar.jpg";
 import { Button } from "@/components/primitives/button";
 import { PencilFill } from "@/components/icons";
 
-import { cssBgVar, cssFgVar, applyStyle } from "./utils";
+import { cssBgVar, cssFgVar, applyStyle } from "../utils";
 
 const classes = {
   root: stack({

@@ -3,7 +3,7 @@ import { stack, circle } from "@root/styled-system/patterns";
 
 import { ChartBarFill } from "@/components/icons";
 
-import { cssFgVar, applyStyle, cssBgVar } from "./utils";
+import { cssFgVar, applyStyle, cssBgVar } from "../utils";
 
 const classes = {
   root: stack({ gap: "6", p: "6", pb: "0", rounded: "xl", overflow: "hidden" }),

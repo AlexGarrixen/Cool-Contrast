@@ -1,3 +1,5 @@
+export { default as ArrowRightUpLine } from "./ArrowRightUpLine";
+
 export { default as Brand } from "./Brand";
 
 export { default as ChartBarFill } from "./ChartBarFill";
@@ -29,6 +31,8 @@ export { default as LinkFill } from "./LinkFill";
 export { default as MoreFill } from "./MoreFill";
 
 export { default as PencilFill } from "./PencilFill";
+
+export { default as Play } from "./Play";
 
 export { default as SocialXFill } from "./SocialXFill";
 

@@ -1,13 +1,8 @@
 "use client";
 
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { useAtomValue } from "jotai";
-import Color from "color";
 import { css } from "@root/styled-system/css";
 
-import { background, foreground } from "@/store";
-
-import { fgVar, bgVar } from "./utils";
 import { Sample1 } from "./sample-1";
 import { Sample2 } from "./sample-2";
 import { Sample3 } from "./sample-3";
@@ -22,16 +17,10 @@ import { Sample12 } from "./sample-12";
 import { Sample13 } from "./sample-13";
 
 export function SamplesGrid() {
-  const bg = useAtomValue(background);
-  const fg = useAtomValue(foreground);
-  const bgRgb = Color(bg).rgb().round().array();
-  const fgRgb = Color(fg).rgb().round().array();
-
   return (
     <ResponsiveMasonry
       className={css({ "& article": { border: "1px solid", borderColor: "border-secondary" } })}
-      columnsCountBreakPoints={{ 0: 1, 640: 2, 1024: 3 }}
-      style={{ [fgVar as string]: fgRgb.join(" "), [bgVar as string]: bgRgb.join(" ") }}
+      columnsCountBreakPoints={{ 0: 1, 640: 2, 1400: 3 }}
     >
       <Masonry gutter="20px">
         <Sample1 />

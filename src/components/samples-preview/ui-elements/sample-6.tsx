@@ -5,7 +5,7 @@ import { slider } from "@root/styled-system/recipes";
 import { Button } from "@/components/primitives/button";
 import { MoreFill, UploadLine } from "@/components/icons";
 
-import { cssFgVar, cssBgVar, applyStyle } from "./utils";
+import { cssFgVar, cssBgVar, applyStyle } from "../utils";
 
 const classes = {
   root: stack({ gap: "6", p: "6", rounded: "xl" }),

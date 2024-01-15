@@ -31,15 +31,12 @@ export function ContrastScore() {
   const Emoji = EmojiStatus[feedback];
 
   return (
-    <div className={classes.root}>
-      <span className={classes.subheading}>CONTRAST RELATION</span>
-      <div className={classes.scoreWrapper} style={{ color: getSemanticColor() }}>
-        <div>
-          <span className={classes.feedback}>{feedback.replace("-", " ")}</span>
-          <span className={classes.contrastRatio}>{contrast.toFixed(2)}</span>
-        </div>
-        <Emoji className={classes.checkIcon} />
+    <div className={classes.root} style={{ color: getSemanticColor() }}>
+      <div>
+        <span className={classes.feedback}>{feedback.replace("-", " ")}</span>
+        <span className={classes.contrastRatio}>{contrast.toFixed(2)}</span>
       </div>
+      <Emoji className={classes.checkIcon} />
     </div>
   );
 }

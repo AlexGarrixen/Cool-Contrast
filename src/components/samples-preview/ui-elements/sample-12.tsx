@@ -2,7 +2,7 @@ import { css } from "@root/styled-system/css";
 import { stack } from "@root/styled-system/patterns";
 import { slider } from "@root/styled-system/recipes";
 
-import { applyStyle, cssFgVar } from "./utils";
+import { applyStyle, cssFgVar } from "../utils";
 
 const classes = {
   root: stack({ gap: "4", p: "6", rounded: "xl" }),

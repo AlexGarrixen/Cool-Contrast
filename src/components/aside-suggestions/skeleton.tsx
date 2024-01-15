@@ -1,8 +1,6 @@
 import { css } from "@root/styled-system/css";
 import { stack } from "@root/styled-system/patterns";
 
-import { Panel } from "./aside-suggestions";
-
 const classes = {
   suggestion: css({
     border: "1px solid",
@@ -32,13 +30,11 @@ const classes = {
 
 export function AsideSkeleton() {
   return (
-    <Panel>
-      <div className={stack({ gap: "5" })}>
-        <SuggestionSkeleton />
-        <SuggestionSkeleton />
-        <SuggestionSkeleton />
-      </div>
-    </Panel>
+    <div className={stack({ gap: "5" })}>
+      <SuggestionSkeleton />
+      <SuggestionSkeleton />
+      <SuggestionSkeleton />
+    </div>
   );
 }
 

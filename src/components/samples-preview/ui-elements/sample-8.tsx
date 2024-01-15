@@ -1,7 +1,7 @@
 import { css } from "@root/styled-system/css";
 import { stack } from "@root/styled-system/patterns";
 
-import { cssFgVar, applyStyle } from "./utils";
+import { cssFgVar, applyStyle } from "../utils";
 
 const classes = {
   root: stack({ gap: "16", p: "6", rounded: "xl", textAlign: "left" }),

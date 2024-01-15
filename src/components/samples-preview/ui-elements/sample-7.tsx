@@ -2,29 +2,28 @@ import { css } from "@root/styled-system/css";
 import { stack } from "@root/styled-system/patterns";
 
 import { Button } from "@/components/primitives/button";
-import { FingerprintLine } from "@/components/icons";
 
-import { cssBgVar, cssFgVar, applyStyle } from "./utils";
+import { cssBgVar, cssFgVar, applyStyle } from "../utils";
 
 const classes = {
-  root: stack({ gap: "6", p: "6", rounded: "xl" }),
-  icon: css({ fontSize: "icon-60" }),
+  root: stack({ gap: "10", p: "6", rounded: "xl", textAlign: "center" }),
   title: css({ textStyle: "display-sm", fontWeight: "bold" }),
-  desc: css({ textStyle: "body-base", mt: "4" }),
+  price: css({ textStyle: "display-lg", fontWeight: "bold" }),
+  desc: css({ textStyle: "body-base", mt: "3" }),
 };
 
-export function Sample1() {
+export function Sample7() {
   return (
     <article className={classes.root} style={applyStyle("bg")}>
-      <div className={classes.icon} style={applyStyle("color")}>
-        <FingerprintLine />
+      <div className={classes.title} style={applyStyle("color")}>
+        Review your daily income
       </div>
       <div>
-        <p className={classes.title} style={applyStyle("color")}>
-          Control you card quickly and easily with one tap
+        <p className={classes.price} style={applyStyle("color")}>
+          $680.5
         </p>
         <p className={classes.desc} style={applyStyle("color")}>
-          Explore all the benefots of our cards with a single tap
+          Change payout method in settings
         </p>
       </div>
       <Button
@@ -34,7 +33,7 @@ export function Sample1() {
         }}
         variant="solid"
       >
-        Try Free
+        Go settings
       </Button>
     </article>
   );

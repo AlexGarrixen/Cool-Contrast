@@ -3,7 +3,7 @@ import { css } from "@root/styled-system/css";
 import { stack, circle } from "@root/styled-system/patterns";
 import memoji from "@root/public/memoji-face.png";
 
-import { cssFgVar, applyStyle } from "./utils";
+import { cssFgVar, applyStyle } from "../utils";
 
 const classes = {
   root: stack({ gap: "6", p: "6", rounded: "xl", align: "center" }),
