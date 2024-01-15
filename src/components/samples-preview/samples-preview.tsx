@@ -9,7 +9,7 @@ import { background, foreground } from "@/store";
 
 import * as ToggleButton from "./toggle-button";
 import { MinimalistPage } from "./minimalist-page";
-import { SamplesGrid } from "./samples-grid";
+import { UIElements } from "./ui-elements";
 import { fgVar, bgVar } from "./utils";
 
 const classes = {
@@ -40,7 +40,7 @@ export function SamplesPreview() {
           <ToggleButton.Item value={previewModes.uiElements}>UI Elements</ToggleButton.Item>
         </ToggleButton.Root>
       </div>
-      {previewMode === previewModes.minimalistPage ? <MinimalistPage /> : <SamplesGrid />}
+      {previewMode === previewModes.minimalistPage ? <MinimalistPage /> : <UIElements />}
     </section>
   );
 }

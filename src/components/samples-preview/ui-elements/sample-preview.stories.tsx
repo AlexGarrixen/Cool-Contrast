@@ -2,6 +2,8 @@ import type { StoryObj, Meta } from "@storybook/react";
 
 import { css } from "@root/styled-system/css";
 
+import { bgVar, fgVar } from "../utils";
+
 import { Sample1 } from "./sample-1";
 import { Sample2 } from "./sample-2";
 import { Sample3 } from "./sample-3";
@@ -14,7 +16,6 @@ import { Sample9 } from "./sample-9";
 import { Sample11 } from "./sample-11";
 import { Sample12 } from "./sample-12";
 import { Sample13 } from "./sample-13";
-import { bgVar, fgVar } from "./utils";
 
 export default {
   title: "Samples Previews",

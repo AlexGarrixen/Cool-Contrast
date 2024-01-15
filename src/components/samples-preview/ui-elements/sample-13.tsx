@@ -3,7 +3,7 @@ import { circle } from "@root/styled-system/patterns";
 
 import { SuitcaseFill } from "@/components/icons";
 
-import { applyStyle, cssFgVar } from "./utils";
+import { applyStyle, cssFgVar } from "../utils";
 
 const classes = {
   root: css({

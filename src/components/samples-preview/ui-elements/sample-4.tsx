@@ -1,7 +1,7 @@
 import { css } from "@root/styled-system/css";
 import { stack, circle } from "@root/styled-system/patterns";
 
-import { cssFgVar, cssBgVar, applyStyle } from "./utils";
+import { cssFgVar, cssBgVar, applyStyle } from "../utils";
 
 const classes = {
   root: stack({
