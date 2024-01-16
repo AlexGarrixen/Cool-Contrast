@@ -1,7 +1,7 @@
 import { css } from "@root/styled-system/css";
 
 export default {
-  root: css({
+  levelContainer: css({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",

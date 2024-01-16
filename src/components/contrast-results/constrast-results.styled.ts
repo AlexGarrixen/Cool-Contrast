@@ -12,7 +12,7 @@ export default {
   levels: css({
     display: "grid",
     rowGap: "5",
-    columnGap: "10",
+    columnGap: "8",
     md: { flex: 1 },
     sm: {
       gridTemplateColumns: "repeat(2, 1fr)",

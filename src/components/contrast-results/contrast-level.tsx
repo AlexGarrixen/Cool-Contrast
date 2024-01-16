@@ -10,16 +10,16 @@ interface Iprops {
 
 export function ContrastLevel({ textType, contrast, pass }: Iprops) {
   return (
-    <li className={classes.root}>
-      <div>
-        <span className={classes.textType}>{textType.toUpperCase()} TEXT</span>
+    <li>
+      <span className={classes.textType}>{textType.toUpperCase()} TEXT</span>
+      <div className={classes.levelContainer}>
         <p className={classes.contrast}>{contrast}</p>
+        {pass ? (
+          <CheckFill aria-label="check" className={classes.checkIcon} />
+        ) : (
+          <CloseFill aria-label="close" className={classes.closeIcon} />
+        )}
       </div>
-      {pass ? (
-        <CheckFill aria-label="check" className={classes.checkIcon} />
-      ) : (
-        <CloseFill aria-label="close" className={classes.closeIcon} />
-      )}
     </li>
   );
 }
