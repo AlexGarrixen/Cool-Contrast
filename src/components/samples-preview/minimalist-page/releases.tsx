@@ -111,6 +111,7 @@ function ReleaseItem({ authors, title, imgSrc }: ReleaseItemProps) {
       <div className={classes.releaseContent}>
         <Button
           isIconOnly
+          aria-label="play button"
           className={css({ borderColor: "currentcolor!", color: "currentColor!" })}
         >
           <Play />
