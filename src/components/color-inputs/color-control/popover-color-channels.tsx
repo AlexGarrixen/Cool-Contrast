@@ -61,12 +61,7 @@ export function PopoverColorChannels({ sourceColor, onChange }: Iprops) {
 
   return (
     <Popover.Portal>
-      <Popover.Content
-        align="end"
-        alignOffset={-16}
-        className={classes.popoverContent}
-        sideOffset={15}
-      >
+      <Popover.Content align="start" className={classes.popoverContent} side="bottom">
         <div>
           <div className={classes.colorModes}>
             <span>Color Space</span>
