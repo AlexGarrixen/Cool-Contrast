@@ -26,10 +26,10 @@ export function Footer() {
         </a>
       </p>
       <div className={classes.icons}>
-        <a href="https://alextexis.vercel.app">
+        <a aria-label="my website" href="https://alextexis.vercel.app">
           <LinkFill />
         </a>
-        <a href="https://twitter.com/AlexGarrixen">
+        <a aria-label="x account" href="https://twitter.com/AlexGarrixen">
           <SocialXFill />
         </a>
       </div>
