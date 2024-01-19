@@ -1,15 +1,11 @@
 ![inspect the perfect combination of your colors](./public/og-image.webp "inspect the perfect combination of your colors")
 
-<p align="center">
-  <br/>
-  <a href="https://coolcontrast.vercel.app">Cool Contrast</a> is the tool that helps you create and inspect the perfect combination of your colors.
-</p>
-
 ## Features
 
-- ⚡️ Contrast suggestions to enhance your color combinations.
-- 👀 Preview the results in a collection of UI elements.
-- 🎨 Editing in different color modes.
+- 🔎 Feedback on contrast ratio and compliance levels.
+- ⚡️ Suggestions to enhance your colors contrast.
+- 👀 Preview the results with samples, such as a minimalistic page or a set of UI elements.
+- 🎨 Editing in different color spaces.
 
 ## Install
 
