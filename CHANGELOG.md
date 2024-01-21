@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.5.0...v1.6.0) (2024-01-21)
+
+
+### Features
+
+* **footer:** add aria-label in links for improve accessibility ([3545e90](https://github.com/AlexGarrixen/Cool-Contrast/commit/3545e9026c01ae5afdfed6c4cc861d24433541ab))
+* **minimalist page:** add aria-label in play button of release item ([38162d8](https://github.com/AlexGarrixen/Cool-Contrast/commit/38162d8abc839daa38156532315e3ec33588a399))
+* **popover color picker:** modify align, side render and adjust z-index ([40382f0](https://github.com/AlexGarrixen/Cool-Contrast/commit/40382f014aad9484ed7e6c13d54db21ded933336))
+* **seo:** update open graph image ([04660c7](https://github.com/AlexGarrixen/Cool-Contrast/commit/04660c7c7cb4066ca7e30f5f4056472ad057dd60))
+* **seo:** update title and description metadata ([5a28878](https://github.com/AlexGarrixen/Cool-Contrast/commit/5a28878a7c2ee3d6b3a4eaf0c0e20296de060073))
+* **suggestions:** separate hints for background and foreground ([441ae5f](https://github.com/AlexGarrixen/Cool-Contrast/commit/441ae5f929ae9ba514c6f40c47a7d90d30366761))
+
 ## [1.5.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.4.0...v1.5.0) (2024-01-15)
 
 
