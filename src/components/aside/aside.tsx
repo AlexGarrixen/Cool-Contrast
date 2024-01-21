@@ -3,7 +3,8 @@ import type { ReactNode } from "react";
 import { css, cx } from "@root/styled-system/css";
 import { stack } from "@root/styled-system/patterns";
 
-import Suggestions from "@/components/aside-suggestions";
+import BgSuggestions from "@/components/background-suggestions";
+import FgSuggestions from "@/components/foreground-suggestions";
 import { ColorInputs } from "@/components/color-inputs";
 import { ContrastResults } from "@/components/contrast-results";
 
@@ -32,8 +33,12 @@ export function Aside() {
         <ColorInputs />
       </Panel>
       <Divider className={classes.hiddenOnMobile} />
-      <Panel className={classes.hiddenOnMobile} label="Suggestions">
-        <Suggestions />
+      <Panel className={classes.hiddenOnMobile} label="Background suggestions">
+        <BgSuggestions />
+      </Panel>
+      <Divider className={classes.hiddenOnMobile} />
+      <Panel className={classes.hiddenOnMobile} label="Text suggestions">
+        <FgSuggestions />
       </Panel>
     </div>
   );

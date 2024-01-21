@@ -1,18 +1,16 @@
 import { describe, it } from "@jest/globals";
 
-import { createContrastSuggestions } from "./contrast-suggestions";
+import { createSuggestions } from "./contrast-suggestions";
 
 describe("Lib / Contrast Suggestions", () => {
-  it("Should return array of suggestions object", () => {
-    const suggestions = createContrastSuggestions("#01F062", "#B6A3A4");
+  it("Should return array of suggestions", () => {
+    const suggestions = createSuggestions({ forColor: "#ff0000", matchingColor: "#ffb700" });
 
     expect(Array.isArray(suggestions)).toBeTruthy();
 
     const properties = Object.keys(suggestions[0]);
 
-    expect(properties).toContain("fg");
-    expect(properties).toContain("bg");
+    expect(properties).toContain("color");
     expect(properties).toContain("contrast");
-    expect(properties).toContain("id");
   });
 });

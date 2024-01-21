@@ -2,16 +2,22 @@ import { describe, it } from "@jest/globals";
 import { render } from "@testing-library/react";
 import * as useHooks from "@uidotdev/usehooks";
 
-import AsideSuggestions from "../aside-suggestions";
+import ForegroundSuggestions, { Skeleton } from "../foreground-suggestions";
 
 jest.mock("@uidotdev/usehooks", () => ({
   __esModule: true,
   useMediaQuery: jest.fn(() => true),
 }));
 
-describe("Aside Suggestions", () => {
+describe("Foreground Suggestions", () => {
   it("Correct rendering and unmount", () => {
-    const screen = render(<AsideSuggestions />);
+    const screen = render(<ForegroundSuggestions />);
+
+    expect(() => screen.unmount()).not.toThrow();
+  });
+
+  it("Correct rendering and unmount of skeleton", () => {
+    const screen = render(<Skeleton />);
 
     expect(() => screen.unmount()).not.toThrow();
   });
@@ -19,7 +25,7 @@ describe("Aside Suggestions", () => {
   it("Should render only is small device", () => {
     jest.spyOn(useHooks, "useMediaQuery").mockReturnValue(false);
 
-    const screen = render(<AsideSuggestions />);
+    const screen = render(<ForegroundSuggestions />);
 
     expect(screen.container.firstChild).toBeNull();
   });

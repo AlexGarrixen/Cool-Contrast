@@ -1,1 +1,1 @@
-export { createContrastSuggestions } from "./contrast-suggestions";
+export { createSuggestions } from "./contrast-suggestions";

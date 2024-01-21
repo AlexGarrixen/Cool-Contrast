@@ -40,7 +40,14 @@ export function SuggestionsButton() {
             </Dialog.Close>
           </header>
           <div className={classes.dialogBody}>
-            <Suggestions className={classes.suggestions} onApply={onClose} />
+            <section>
+              <div className={classes.suggestionsHeading}>Background Suggestions</div>
+              <Suggestions className={classes.suggestions} type="background" onApply={onClose} />
+            </section>
+            <section>
+              <div className={classes.suggestionsHeading}>Text Suggestions</div>
+              <Suggestions className={classes.suggestions} type="foreground" onApply={onClose} />
+            </section>
           </div>
         </Dialog.Content>
       </Dialog.Portal>

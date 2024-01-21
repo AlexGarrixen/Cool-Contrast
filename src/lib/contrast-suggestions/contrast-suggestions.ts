@@ -4,10 +4,9 @@ import _uniqWith from "lodash.uniqwith";
 
 import { contrastGuidelines } from "@/lib/wcag-text-contrast";
 
-interface SuggestionResult {
-  fg: string;
-  bg: string;
+interface AccesibleColor {
   contrast: string;
+  color: string;
   id: string;
 }
 
@@ -63,51 +62,46 @@ function createColorScale(sourceColor: string, opts?: ColorScaleOpts) {
 
 const createHash = () => Math.random().toString(16).slice(2);
 
-function getBestScalesContrast(scaleA: string[], scaleB: string[]) {
-  const results: SuggestionResult[] = [];
+function findAccesibleColors({
+  forColor,
+  matchingColors,
+}: {
+  forColor: string;
+  matchingColors: string[];
+}) {
+  const result: AccesibleColor[] = [];
 
-  scaleA.forEach((scaleColorA) => {
-    scaleB.forEach((scaleColorB) => {
-      const contrast = Color(scaleColorA).contrast(Color(scaleColorB));
+  for (const color of matchingColors) {
+    const contrast = Color(forColor).contrast(Color(color));
+    const isAccesible = contrast > contrastGuidelines.AALevel.normalText;
 
-      if (contrast > contrastGuidelines.AAALevel.normalText) {
-        results.push({
-          bg: scaleColorA,
-          fg: scaleColorB,
-          contrast: contrast.toFixed(2),
-          id: createHash(),
-        });
-      }
-    });
-  });
+    if (isAccesible) result.push({ id: createHash(), color, contrast: contrast.toFixed(2) });
+  }
 
-  return results;
+  return result;
 }
 
-export function createContrastSuggestions(bg: string, fg: string) {
-  const scaleBg = createColorScale(bg, { direction: "center" });
-  const scaleFg = createColorScale(fg, { direction: "center" });
-  let result: SuggestionResult[] = [];
-
-  result = [...getBestScalesContrast(scaleBg, scaleFg)];
+export function createSuggestions({
+  forColor,
+  matchingColor,
+}: {
+  forColor: string;
+  matchingColor: string;
+}) {
+  const colorScale = createColorScale(matchingColor, { direction: "center" });
+  let result = findAccesibleColors({ forColor, matchingColors: colorScale });
 
   if (result.length <= 3) {
     const fallbackScale = createColorScale("#000", {
+      direction: "start",
       range: [0, 950],
       startInRange: 50,
     });
 
-    result = [
-      ...result,
-      ...getBestScalesContrast([bg], fallbackScale),
-      ...getBestScalesContrast([fg], fallbackScale),
-    ];
+    result = [...result, ...findAccesibleColors({ forColor, matchingColors: fallbackScale })];
   }
 
-  result = result.sort((a, b) => parseFloat(a.contrast) - parseFloat(b.contrast));
-
-  return _uniqWith(
-    result,
-    (objA: SuggestionResult, objB: SuggestionResult) => objA.fg === objB.fg && objA.bg === objB.bg,
+  return _uniqWith(result, (a, b) => a.color === b.color).sort(
+    (a, b) => parseFloat(a.contrast) - parseFloat(b.contrast),
   );
 }

@@ -1,6 +1,6 @@
 import { describe, it } from "@jest/globals";
 
-import { colorModes } from "../utils";
+import { colorModes, resolveValidColor } from "../utils";
 
 describe("Color Control/Utils", () => {
   it("Should convert to rgb channels", () => {
@@ -31,5 +31,11 @@ describe("Color Control/Utils", () => {
     const channels = colorModes.hwb.converter("#fff");
 
     expect(channels).toMatchObject([0, 100, 0]);
+  });
+
+  it("Should return fallback color if color input it not valid", () => {
+    const result = resolveValidColor("abc", "#000");
+
+    expect(result).toEqual("#000");
   });
 });

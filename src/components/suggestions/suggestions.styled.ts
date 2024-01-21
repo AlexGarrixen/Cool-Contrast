@@ -1,7 +1,7 @@
 import { css } from "@root/styled-system/css";
 
 export default {
-  root: css({ display: "grid", gridTemplateColumns: "1", gap: "5" }),
+  root: css({ display: "grid", gap: "5" }),
 
   suggestion: css({
     border: "1px solid",
@@ -10,18 +10,15 @@ export default {
     overflow: "hidden",
   }),
 
-  suggestionPreviews: css({ display: "flex" }),
+  emptyMsg: css({ color: "text-secondary" }),
 
   suggestionPreview: css({
-    aspectRatio: "3/2",
-    flex: 1,
+    aspectRatio: "1/1",
     display: "flex",
     alignItems: "center",
+    fontWeight: "500",
+    textStyle: "display-xs",
     justifyContent: "center",
-    "&:first-child": {
-      borderRight: "1px solid",
-      borderColor: "border-secondary",
-    },
     "& > span": {
       textStyle: "body-lg",
     },

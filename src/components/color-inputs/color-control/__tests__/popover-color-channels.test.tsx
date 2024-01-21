@@ -1,9 +1,9 @@
+import { useAtom } from "jotai";
 import { describe, it } from "@jest/globals";
 import { fireEvent, render } from "@testing-library/react";
 import * as Popover from "@radix-ui/react-popover";
-import { useAtom } from "jotai";
 
-import { pickingColor } from "@/store";
+import { foreground } from "@/store";
 
 import { PopoverColorChannels } from "../popover-color-channels";
 
@@ -47,32 +47,24 @@ describe("Popover Color Channels", () => {
     fireEvent.blur(input);
 
     expect(input.value).toBe("200");
+    expect(onChangeMock).toHaveBeenCalled();
   });
 
-  it("Should update the state picking when interacting with the color picker", () => {
-    function Render() {
-      const [picking] = useAtom(pickingColor);
+  it("Should call onChange when interacting with the color picker", () => {
+    const onChangeMock = jest.fn();
 
-      return (
-        <>
-          {picking ? "true" : "false"}
-          <Popover.Root open>
-            <PopoverColorChannels sourceColor="#000000" />
-          </Popover.Root>
-        </>
-      );
-    }
-
-    const screen = render(<Render />);
+    const screen = render(
+      <Popover.Root open>
+        <PopoverColorChannels sourceColor="#000" onChange={onChangeMock} />
+      </Popover.Root>,
+    );
 
     const el = screen.getByLabelText("Color");
 
     expect(el).toBeInTheDocument();
 
     fireEvent.mouseDown(el);
-    expect(screen.getByText("true"));
-
     fireEvent.mouseUp(el);
-    expect(screen.getByText("false"));
+    expect(onChangeMock).toHaveBeenCalled();
   });
 });

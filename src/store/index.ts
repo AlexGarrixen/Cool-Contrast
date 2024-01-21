@@ -37,9 +37,3 @@ export const contrastRelation = atom((get) => {
 
   return { contrast, feedback };
 });
-
-export const pickingColor = atom(false);
-
-export const startPickingColor = atom(null, (get, set) => set(pickingColor, true));
-
-export const stopPickingColor = atom(null, (get, set) => set(pickingColor, false));

@@ -1,5 +1,5 @@
-import { css } from "@root/styled-system/css";
-import { stack } from "@root/styled-system/patterns";
+import { css, cx } from "@root/styled-system/css";
+import { grid } from "@root/styled-system/patterns";
 
 const classes = {
   suggestion: css({
@@ -9,16 +9,9 @@ const classes = {
     overflow: "hidden",
   }),
 
-  suggestionPreviews: css({ display: "flex" }),
-
   suggestionPreview: css({
-    aspectRatio: "3/2",
+    aspectRatio: "1/1",
     bgColor: "bg-secondary",
-    flex: 1,
-    "&:first-child": {
-      borderRight: "1px solid",
-      borderColor: "border-secondary",
-    },
   }),
 
   suggestionContent: css({
@@ -28,9 +21,9 @@ const classes = {
   }),
 };
 
-export function AsideSkeleton() {
+export function SkeletonSuggestions({ className }: { className?: string }) {
   return (
-    <div className={stack({ gap: "5" })}>
+    <div className={cx(grid({ gap: "5" }), className)}>
       <SuggestionSkeleton />
       <SuggestionSkeleton />
       <SuggestionSkeleton />
@@ -41,10 +34,7 @@ export function AsideSkeleton() {
 function SuggestionSkeleton() {
   return (
     <article className={classes.suggestion}>
-      <div className={classes.suggestionPreviews}>
-        <div className={classes.suggestionPreview} />
-        <div className={classes.suggestionPreview} />
-      </div>
+      <div className={classes.suggestionPreview} />
       <div className={classes.suggestionContent} />
     </article>
   );

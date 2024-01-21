@@ -7,14 +7,16 @@ import { Suggestions } from "../suggestions";
 
 describe("Suggestions List", () => {
   it("Correct rendering and unmount", () => {
-    const screen = render(<Suggestions />);
+    const screen = render(<Suggestions type="background" />);
 
     expect(() => screen.unmount()).not.toThrow();
   });
 
   it("Should call onApply callback", () => {
     const mockHandler = jest.fn();
-    const screen = render(<Suggestions className="my-class" onApply={mockHandler} />);
+    const screen = render(
+      <Suggestions className="my-class" type="foreground" onApply={mockHandler} />,
+    );
     const [button] = screen.getAllByRole("button");
 
     expect(button).toBeInTheDocument();
@@ -28,7 +30,7 @@ describe("Suggestions List", () => {
     background.onMount = (set) => set("#fff");
     foreground.onMount = (set) => set("#000");
 
-    const screen = render(<Suggestions />);
+    const screen = render(<Suggestions type="background" />);
 
     expect(screen.getByText("There is nothing more to suggest")).toBeInTheDocument();
   });

@@ -38,7 +38,16 @@ export default {
     overflow: "hidden",
   }),
 
-  dialogBody: css({ px: "6", py: "6", overflowY: "auto" }),
+  dialogBody: css({
+    px: "6",
+    py: "6",
+    overflowY: "auto",
+    display: "flex",
+    flexDirection: "column",
+    gap: "5",
+  }),
 
-  suggestions: css({ gridTemplateColumns: { sm: "2" } }),
+  suggestions: css({ gridTemplateColumns: "2" }),
+
+  suggestionsHeading: css({ fontWeight: "500", textStyle: "body-lg", mb: "4" }),
 };
