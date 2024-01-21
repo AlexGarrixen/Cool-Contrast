@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 const metadata: Metadata = {
   metadataBase: new URL("https://coolcontrast.vercel.app"),
-  title: "Cool Contrast - Inspect the perfect combination of your colors",
-  description: "Create and inspect the perfect combination of your colors",
+  title: "Cool Contrast - Inspect and optimize the accessibility of your colors",
+  description: "Inspect and optimize the accessibility of your colors",
   openGraph: {
     images: "/og-image.webp",
     url: "https://coolcontrast.vercel.app",
