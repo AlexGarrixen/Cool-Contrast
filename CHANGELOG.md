@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.6.0...v1.7.0) (2024-02-05)
+
+
+### Features
+
+* **seo:** update metadata config ([e2eebe6](https://github.com/AlexGarrixen/Cool-Contrast/commit/e2eebe6a9f0c2f6d1a6013776f650fed36dd1056))
+
 ## [1.6.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.5.0...v1.6.0) (2024-01-21)
 
 
