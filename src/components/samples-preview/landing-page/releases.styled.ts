@@ -1,6 +1,8 @@
 import { css } from "@root/styled-system/css";
 
 export const classes = {
+  root: css({ py: 10 }),
+
   sectionTop: css({
     display: { md: "flex" },
     gap: "8",

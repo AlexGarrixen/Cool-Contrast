@@ -1,3 +1,5 @@
+import { container } from "@root/styled-system/patterns";
+
 import { Button } from "@/components/primitives/button";
 import { releases } from "@/const/landing-preview";
 import { Icons } from "@/components/icons-lib";
@@ -12,35 +14,38 @@ const mainRelease = releases[0];
 export function Releases() {
   return (
     <section
+      className={classes.root}
       style={{
         ...applyStyle("bg", { fromVar: cssFgVar }),
         ...applyStyle("color", { fromVar: cssBgVar }),
       }}
     >
-      <div className={classes.sectionTop}>
-        <h2 className={classes.heading}>
-          PRODUCTIONS <span>& SINGLES</span>
-        </h2>
+      <div className={container()}>
+        <div className={classes.sectionTop}>
+          <h2 className={classes.heading}>
+            PRODUCTIONS <span>& SINGLES</span>
+          </h2>
 
-        <div className={classes.wrapperDesc}>
-          <p className={classes.desc}>
-            Feel the energy of their music and prepare to be taken on an unforgettable journey
-            through the most vibrant and exicting sounds in the world of electronic music.
-          </p>
-          <Button style={{ ...applyStyle("bg"), ...applyStyle("color") }} variant="solid">
-            VIEW ALL RELEASES
-          </Button>
+          <div className={classes.wrapperDesc}>
+            <p className={classes.desc}>
+              Feel the energy of their music and prepare to be taken on an unforgettable journey
+              through the most vibrant and exicting sounds in the world of electronic music.
+            </p>
+            <Button style={{ ...applyStyle("bg"), ...applyStyle("color") }} variant="solid">
+              VIEW ALL RELEASES
+            </Button>
+          </div>
         </div>
-      </div>
 
-      <div className={classes.sectionReleases}>
-        <div className={classes.mainReleaseWrapper}>
-          <MainRelease {...mainRelease} />
-        </div>
-        <div className={classes.releasesList}>
-          {releasesList.map(({ author, img, title }) => (
-            <CompactRelease key={title} author={author} imgSrc={img} title={title} />
-          ))}
+        <div className={classes.sectionReleases}>
+          <div className={classes.mainReleaseWrapper}>
+            <MainRelease {...mainRelease} />
+          </div>
+          <div className={classes.releasesList}>
+            {releasesList.map(({ author, img, title }) => (
+              <CompactRelease key={title} author={author} imgSrc={img} title={title} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

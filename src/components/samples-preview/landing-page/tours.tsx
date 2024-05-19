@@ -1,10 +1,13 @@
 import { css } from "@root/styled-system/css";
+import { container } from "@root/styled-system/patterns";
 
 import { Button } from "@/components/primitives/button";
 
 import { applyStyle, cssFgVar, cssBgVar } from "../utils";
 
 const classes = {
+  root: css({ py: 10 }),
+
   heading: css({
     fontWeight: "bold",
     mb: { base: 12, md: 16 },
@@ -40,46 +43,49 @@ const classes = {
 export function Tours() {
   return (
     <section
+      className={classes.root}
       style={{
         ...applyStyle("bg"),
         ...applyStyle("color"),
       }}
     >
-      <h2 className={classes.heading}>UPCOMING TOURS</h2>
-      <ul className={classes.tours}>
-        <li>
-          <TourItem
-            date="2024-05-21"
-            location="Las Vegas,USA"
-            name="OMNIA NIGHTCLUB"
-            zone="Omnia Nightclub"
-          />
-        </li>
-        <li>
-          <TourItem
-            date="2024-08-25"
-            location="Honk Kong"
-            name="CREAMFIELDS HONK KONG"
-            zone="Central Hambirfront"
-          />
-        </li>
-        <li>
-          <TourItem
-            date="2024-05-25"
-            location="Las Vegas,United States"
-            name="WET REPUBLIC"
-            zone="Wet Republic"
-          />
-        </li>
-        <li>
-          <TourItem
-            date="2024-08-19"
-            location="Paris,France"
-            name="SOLIDAYS FESTIVAL"
-            zone="Hippodrome de Longchamp"
-          />
-        </li>
-      </ul>
+      <div className={container()}>
+        <h2 className={classes.heading}>UPCOMING TOURS</h2>
+        <ul className={classes.tours}>
+          <li>
+            <TourItem
+              date="2024-05-21"
+              location="Las Vegas,USA"
+              name="OMNIA NIGHTCLUB"
+              zone="Omnia Nightclub"
+            />
+          </li>
+          <li>
+            <TourItem
+              date="2024-08-25"
+              location="Honk Kong"
+              name="CREAMFIELDS HONK KONG"
+              zone="Central Hambirfront"
+            />
+          </li>
+          <li>
+            <TourItem
+              date="2024-05-25"
+              location="Las Vegas,United States"
+              name="WET REPUBLIC"
+              zone="Wet Republic"
+            />
+          </li>
+          <li>
+            <TourItem
+              date="2024-08-19"
+              location="Paris,France"
+              name="SOLIDAYS FESTIVAL"
+              zone="Hippodrome de Longchamp"
+            />
+          </li>
+        </ul>
+      </div>
     </section>
   );
 }
