@@ -8,7 +8,7 @@ import Color from "color";
 import { background, foreground } from "@/store";
 
 import * as ToggleButton from "./toggle-button";
-import { MinimalistPage } from "./minimalist-page";
+import { LandingPage } from "./landing-page";
 import { UIElements } from "./ui-elements";
 import { fgVar, bgVar } from "./utils";
 
@@ -40,7 +40,7 @@ export function SamplesPreview() {
           <ToggleButton.Item value={previewModes.uiElements}>UI Elements</ToggleButton.Item>
         </ToggleButton.Root>
       </div>
-      {previewMode === previewModes.minimalistPage ? <MinimalistPage /> : <UIElements />}
+      {previewMode === previewModes.minimalistPage ? <LandingPage /> : <UIElements />}
     </section>
   );
 }
