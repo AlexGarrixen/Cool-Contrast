@@ -37,3 +37,5 @@ export const contrastRelation = atom((get) => {
 
   return { contrast, feedback };
 });
+
+export const contentTab = atom<"landing" | "elements">("landing");

@@ -23,6 +23,12 @@ export default defineRecipe({
         px: "4",
         rounded: "lg",
       },
+      lg: {
+        height: "12",
+        textStyle: "body-base",
+        px: "6",
+        rounded: "lg",
+      },
     },
     variant: {
       outline: {

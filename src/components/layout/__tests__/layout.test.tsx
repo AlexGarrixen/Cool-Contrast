@@ -11,12 +11,9 @@ describe("Layout", () => {
   });
 
   it("Should render slot content", () => {
-    const screen = render(
-      <Layout aside={<>aside</>} content={<>content</>} header={<>header</>} />,
-    );
+    const screen = render(<Layout content={<>content</>} header={<>header</>} />);
 
     expect(screen.getByText("header")).toBeInTheDocument();
-    expect(screen.getByText("aside")).toBeInTheDocument();
     expect(screen.getByText("content")).toBeInTheDocument();
   });
 });
