@@ -11,11 +11,12 @@ import classes from "./suggestions.styled";
 interface SuggestionsProps extends Pick<SuggestionItemProps, "onApply"> {
   className?: string;
   type: "foreground" | "background";
+  selectedColor?: string;
 }
 
 type Suggestions = ReturnType<typeof createSuggestions>;
 
-export function Suggestions({ onApply, className, type }: SuggestionsProps) {
+export function Suggestions({ onApply, className, type, selectedColor }: SuggestionsProps) {
   const [fg, setFg] = useAtom(foreground);
   const [bg, setBg] = useAtom(background);
   const score = useAtomValue(contrastRelation);
@@ -31,11 +32,6 @@ export function Suggestions({ onApply, className, type }: SuggestionsProps) {
     );
   }
 
-  function handleOnApply(color: string) {
-    isFg ? setFg(color) : setBg(color);
-    onApply?.(color);
-  }
-
   return isEmpty ? (
     <p className={classes.emptyMsg}>There is nothing more to suggest</p>
   ) : (
@@ -45,8 +41,9 @@ export function Suggestions({ onApply, className, type }: SuggestionsProps) {
           key={id}
           color={color}
           contrast={contrast}
+          isSelected={selectedColor === color}
           textColor={isFg ? bg : fg}
-          onApply={handleOnApply}
+          onApply={onApply}
         />
       ))}
     </div>
@@ -57,23 +54,25 @@ interface SuggestionItemProps {
   contrast: string;
   color: string;
   textColor: string;
+  isSelected?: boolean;
   onApply?: (color: string) => void;
 }
 
-function SuggestionItem({ contrast, color, textColor, onApply }: SuggestionItemProps) {
+function SuggestionItem({ contrast, color, textColor, onApply, isSelected }: SuggestionItemProps) {
   const onClickApply = () => onApply?.(color);
 
   return (
-    <article className={classes.suggestion}>
+    <button
+      className={cx(classes.suggestion, isSelected && classes.suggestionSelected)}
+      type="button"
+      onClick={onClickApply}
+    >
       <div className={classes.suggestionPreview} style={{ background: color }}>
-        <span style={{ color: textColor }}>Aa</span>
+        <span style={{ color: textColor }}>{contrast}</span>
       </div>
-      <div className={classes.suggestionContent}>
-        <button className={classes.suggestionBtn} type="button" onClick={onClickApply}>
-          Apply
-        </button>
-        <span className={classes.suggestionContrast}>{contrast}</span>
+      <div className={classes.suggestionColorValue}>
+        <p>{color}</p>
       </div>
-    </article>
+    </button>
   );
 }

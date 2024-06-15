@@ -2,10 +2,10 @@ import { css } from "@root/styled-system/css";
 
 import { dmSans } from "@/styles/fonts";
 import { Layout } from "@/components/layout";
-// import { Aside } from "@/components/aside";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { DialogMoreDetails } from "@/components/dialog-more-details";
 import metadata from "@/config/seo";
 
 import "../styles/globals.css";
@@ -33,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }
           header={<Navbar />}
         />
+        <DialogMoreDetails />
         {IS_PROD ? <GoogleAnalytics /> : null}
       </body>
     </html>

@@ -39,3 +39,9 @@ export const contrastRelation = atom((get) => {
 });
 
 export const contentTab = atom<"landing" | "elements">("landing");
+
+export const showDialogMoreDetails = atom(false);
+
+export const selectedFgSuggestion = atom("");
+
+export const selectedBgSuggestion = atom("");

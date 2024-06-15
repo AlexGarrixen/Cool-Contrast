@@ -5,6 +5,7 @@ import { SwitchTabBtn } from "./switch-tab";
 import { ComplianceDetails } from "./compliance-details";
 import { RandomButton } from "./random-btn";
 import { ColorSelectors } from "./color-selectors";
+import { MoreButton } from "./more-btn";
 
 const classes = {
   root: css({
@@ -25,6 +26,8 @@ const classes = {
   complianceWrapper: css({ display: "flex", alignItems: "center", gap: 8 }),
 
   complianceSelectors: css({ display: "flex", alignItems: "center", gap: 4 }),
+
+  complianceActions: css({ display: "flex", gap: 4 }),
 };
 
 export function Toolbar() {
@@ -35,8 +38,9 @@ export function Toolbar() {
         <div className={classes.complianceWrapper}>
           <ComplianceDetails />
           <ColorSelectors />
-          <div>
+          <div className={classes.complianceActions}>
             <RandomButton />
+            <MoreButton />
           </div>
         </div>
       </div>

@@ -49,12 +49,18 @@ export default defineRecipe({
     },
     isIconOnly: {
       true: {
-        rounded: "999px!",
         px: "0!",
       },
     },
   },
   compoundVariants: [
+    {
+      isIconOnly: true,
+      size: "lg",
+      css: {
+        width: "12!",
+      },
+    },
     {
       isIconOnly: true,
       size: "md",

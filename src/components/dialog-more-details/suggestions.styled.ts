@@ -1,19 +1,15 @@
 import { css } from "@root/styled-system/css";
 
-export default {
-  root: css({ display: "grid", gap: "5" }),
+export const classes = {
+  root: css({ display: "flex", flexDirection: "column", gap: "12" }),
 
-  emptyMsg: css({ color: "text-secondary" }),
+  title: css({ textStyle: "display-xs", mb: "5", fontWeight: "500" }),
 
   suggestion: css({
     rounded: "md",
     overflow: "hidden",
     borderWidth: "1px",
     borderColor: "border-secondary",
-    cursor: "pointer",
-    _hover: {
-      borderColor: "neutral.400",
-    },
   }),
 
   suggestionPreview: css({
@@ -28,13 +24,10 @@ export default {
   suggestionColorValue: css({
     px: "4",
     py: "2",
-    borderTop: "1px solid",
-    borderTopColor: "border-secondary",
     "& p": { textAlign: "center", textStyle: "body-sm" },
   }),
 
-  suggestionSelected: css({
-    outline: "2px solid",
-    outlineColor: "neutral.700",
+  suggestionsGrid: css({
+    gridTemplateColumns: { base: "2", md: "3" },
   }),
 };

@@ -4,6 +4,7 @@ import tokens from "./theme/tokens";
 import semanticTokens from "./theme/semantic-tokens";
 import textStyles from "./theme/text-styles";
 import breakpoints from "./theme/breakpoints";
+import keyframes from "./theme/keyframes";
 import patterns from "./theme/patterns";
 import { recipes, slotRecipes } from "./theme/recipes";
 
@@ -28,5 +29,6 @@ export default defineConfig({
     breakpoints,
     recipes,
     slotRecipes,
+    keyframes,
   },
 });
