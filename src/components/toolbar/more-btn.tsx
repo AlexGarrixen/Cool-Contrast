@@ -14,7 +14,7 @@ export function MoreButton() {
   }
 
   return (
-    <Button isIconOnly size="lg" onClick={onClick}>
+    <Button isIconOnly size="lg" variant="solid-white" onClick={onClick}>
       <Icons.DotsVerticalFill />
     </Button>
   );

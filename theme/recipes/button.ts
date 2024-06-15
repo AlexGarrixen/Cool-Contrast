@@ -33,18 +33,29 @@ export default defineRecipe({
     variant: {
       outline: {
         borderWidth: "1px",
-        borderColor: "border-primary",
+        borderColor: "border-secondary",
         borderStyle: "solid",
         backgroundColor: "transparent",
-        color: "text-primary",
+        color: "text-secondary",
       },
       solid: {
         backgroundColor: "bg-primary-solid",
+        background:
+          "linear-gradient(to bottom, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 100%)",
         color: "white",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        borderImage:
+          "linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 100%)",
+        borderImageSlice: 1,
       },
       "solid-white": {
-        backgroundColor: "white",
-        color: "text-primary",
+        borderWidth: "1px",
+        borderColor: "border-secondary",
+        borderStyle: "solid",
+        backgroundColor: "bg-primary",
+        color: "text-secondary",
+        boxShadow: "0px 1px 3px rgba(0,0,0,0.07)",
       },
     },
     isIconOnly: {
