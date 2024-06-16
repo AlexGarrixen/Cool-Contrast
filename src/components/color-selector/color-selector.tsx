@@ -3,22 +3,57 @@ import { css } from "@root/styled-system/css";
 
 import { Button } from "@/components/primitives/button";
 import { Input } from "@/components/primitives/input";
+import { Icons } from "@/components/icons-lib";
 import { ColorPicker } from "@/components/color-picker";
 import { useHexColorField } from "@/hooks/use-hex-color-field";
 import { fallbackColor } from "@/const/colors";
 
 const classes = {
-  root: css({
+  wrapper: css({
     display: "inline-flex",
-    alignItems: "center",
-    p: 1,
+    w: "max-content",
+    border: "1px solid",
+    borderColor: "border-secondary",
     bgColor: "bg-primary",
-    shadow: "sm",
-    rounded: "xl",
-    gap: 2,
+    boxShadow: "0px 1px 2px rgba(0,0,0,0.04)",
+    rounded: "lg",
+    overflow: "hidden",
+
+    "& > div": {
+      flex: 1,
+      display: "flex",
+      alignItems: "center",
+      pl: "3",
+      gap: "3",
+    },
   }),
 
-  input: css({ border: "none", px: 3, width: "104px" }),
+  colorPreview: css({
+    h: "6",
+    w: "6",
+    borderRadius: "999px",
+    display: "inline-block",
+    border: "1px solid",
+    borderColor: "border-secondary",
+  }),
+
+  field: css({
+    h: "100%",
+    w: "85px",
+    border: "none",
+    outline: "none",
+    bgColor: "bg-primary",
+    pl: "0",
+    pr: "3",
+  }),
+
+  pickerBtn: css({
+    boxShadow: "none",
+    borderTop: "none",
+    borderRight: "none",
+    borderBottom: "none",
+    rounded: "0",
+  }),
 };
 
 interface Iprops {
@@ -35,18 +70,22 @@ export function ColorSelector({ value: valueProp, onChangeColor }: Iprops) {
 
   return (
     <Popover.Root>
-      <div className={classes.root}>
+      <div className={classes.wrapper}>
+        <div>
+          <span className={classes.colorPreview} style={{ backgroundColor: value }} />
+          <Input
+            className={classes.field}
+            placeholder="#000000"
+            value={value}
+            onBlur={onBlurInput}
+            onChange={onChangeInput}
+          />
+        </div>
         <Popover.Trigger asChild>
-          <Button isIconOnly size="md" style={{ backgroundColor: value }} />
+          <Button isIconOnly className={classes.pickerBtn} size="lg" variant="solid-white">
+            <Icons.Picker />
+          </Button>
         </Popover.Trigger>
-        <Input
-          className={classes.input}
-          size="md"
-          type="text"
-          value={value}
-          onBlur={onBlurInput}
-          onChange={onChangeInput}
-        />
       </div>
       <Popover.Content align="start" side="bottom" sideOffset={12}>
         <ColorPicker sourceColor={value} onChange={setValue} />
