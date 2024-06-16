@@ -14,8 +14,8 @@ const classes = {
     top: 16,
     py: 5,
     mt: 4,
-    bgColor: "bg-primary",
     zIndex: 10,
+    bgColor: "bg-secondary",
     "& > div": {
       display: "flex",
       justifyContent: "space-between",

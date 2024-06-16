@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body
         className={`${dmSans.className} ${css({
           color: "text-primary",
-          bg: "bg-primary",
+          bg: "bg-secondary",
           textStyle: "body-base",
         })}`}
       >
