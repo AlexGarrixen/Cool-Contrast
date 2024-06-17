@@ -14,10 +14,10 @@ const classes = {
 
   complianceSubheading: css({
     textStyle: "body-xs",
-    fontWeight: "medium",
+    fontWeight: "500",
     color: "text-secondary",
     display: "block",
-    mb: 2,
+    mb: 1,
   }),
 
   complianceResult: css({

@@ -33,7 +33,7 @@ const classes = {
     gap: { base: 4, md: 8 },
   }),
 
-  tourZoneHeading: css({ textStyle: "base", fontWeight: "500" }),
+  tourZoneHeading: css({ textStyle: "base", fontWeight: "600" }),
 
   tourZoneContent: css({ textStyle: "base", mt: 2, truncate: true }),
 

@@ -23,6 +23,7 @@ const classes = {
     overflow: "hidden",
     outline: "none",
     cursor: "pointer",
+    fontWeight: "600",
 
     "& > div": {
       minW: "122px",

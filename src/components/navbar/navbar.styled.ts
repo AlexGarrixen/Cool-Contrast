@@ -13,7 +13,7 @@ export default {
 
   logo: css({
     textStyle: "display-xs",
-    fontWeight: "bold",
+    fontWeight: "600",
     display: "flex",
     alignItems: "center",
   }),

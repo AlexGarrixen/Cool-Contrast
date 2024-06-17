@@ -6,7 +6,7 @@ export default defineRecipe({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    fontWeight: "700",
+    fontWeight: "600",
     cursor: "pointer",
   },
   variants: {

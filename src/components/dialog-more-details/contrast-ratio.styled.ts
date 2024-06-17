@@ -28,6 +28,7 @@ export const classes = {
       textStyle: "body-sm",
       bgColor: "bg-secondary",
       whiteSpace: "nowrap",
+      fontWeight: "500",
       px: "6",
       h: "10",
       color: "text-secondary",

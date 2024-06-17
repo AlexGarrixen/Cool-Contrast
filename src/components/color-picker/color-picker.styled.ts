@@ -22,7 +22,7 @@ export default {
     mb: "3",
     display: "flex",
     justifyContent: "space-between",
-    "& > span": { fontWeight: "500" },
+    "& > span": { fontWeight: "600" },
   }),
 
   channels: css({ display: "grid", gap: "3", mt: "5" }),

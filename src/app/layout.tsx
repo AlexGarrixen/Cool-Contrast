@@ -1,12 +1,13 @@
 import { css } from "@root/styled-system/css";
 
-import { dmSans } from "@/styles/fonts";
+// import { dmSans } from "@/styles/fonts";
 import { Layout } from "@/components/layout";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { DialogMoreDetails } from "@/components/dialog-more-details";
 import metadata from "@/config/seo";
+import { font } from "@/lib/local-font";
 
 import "../styles/globals.css";
 
@@ -18,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body
-        className={`${dmSans.className} ${css({
+        className={`${font.className} ${css({
           color: "text-primary",
           bg: "bg-secondary",
           textStyle: "body-base",
