@@ -3,9 +3,9 @@ import Color from "color";
 
 import { wcagContrastTest, contrastGuidelines } from "@/lib/wcag-text-contrast";
 
-export const background = atom<string>("#FDFBF6");
+export const background = atom<string>("#261893");
 
-export const foreground = atom<string>("#242422");
+export const foreground = atom<string>("#DBFF5E");
 
 const colors = atom((get) => {
   const bg = get(background);
