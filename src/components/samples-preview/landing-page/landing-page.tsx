@@ -1,7 +1,6 @@
 import { css } from "@root/styled-system/css";
 
-import { WindowMockup } from "../minimalist-page/window-mockup";
-
+import { WindowMockup } from "./window-mockup";
 import { Hero } from "./hero";
 import { Releases } from "./releases";
 import { Tours } from "./tours";
