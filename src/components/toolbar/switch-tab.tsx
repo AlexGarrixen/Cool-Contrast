@@ -5,7 +5,6 @@ import { useAtom, type ExtractAtomValue } from "jotai";
 import * as Select from "@radix-ui/react-select";
 import { css } from "@root/styled-system/css";
 
-// import { SwitchTab, SwitchTabButton } from "@/components/switch-tab";
 import { Icons } from "@/components/icons-lib";
 import { Button } from "@/components/primitives/button";
 import { contentTab as contentTabAtom } from "@/store";
@@ -26,7 +25,7 @@ const classes = {
     fontWeight: "600",
 
     "& > div": {
-      minW: "122px",
+      minW: "126px",
       h: "100%",
       flex: 1,
       display: "flex",
@@ -89,13 +88,15 @@ export function SwitchTabBtn() {
 
   return (
     <Select.Root value={activeTab} onValueChange={onChange}>
-      <Select.Trigger aria-label="Content type" className={classes.wrapper}>
-        <div>
-          <Select.Value />
+      <Select.Trigger asChild aria-label="Content type">
+        <div className={classes.wrapper}>
+          <div>
+            <Select.Value />
+          </div>
+          <Button isIconOnly className={classes.btn} size="lg" variant="solid-white">
+            <Icons.CaretDown />
+          </Button>
         </div>
-        <Button isIconOnly className={classes.btn} size="lg" variant="solid-white">
-          <Icons.CaretDown />
-        </Button>
       </Select.Trigger>
       <Select.Portal>
         <Select.Content className={classes.dialog} position="popper" side="bottom" sideOffset={4}>
