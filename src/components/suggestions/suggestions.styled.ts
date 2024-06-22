@@ -3,38 +3,38 @@ import { css } from "@root/styled-system/css";
 export default {
   root: css({ display: "grid", gap: "5" }),
 
-  suggestion: css({
-    border: "1px solid",
-    borderColor: "border-secondary",
-    rounded: "lg",
-    overflow: "hidden",
-  }),
-
   emptyMsg: css({ color: "text-secondary" }),
 
-  suggestionPreview: css({
-    aspectRatio: "1/1",
-    display: "flex",
-    alignItems: "center",
-    fontWeight: "500",
-    textStyle: "display-xs",
-    justifyContent: "center",
-    "& > span": {
-      textStyle: "body-lg",
+  suggestion: css({
+    rounded: "md",
+    overflow: "hidden",
+    borderWidth: "1px",
+    borderColor: "border-secondary",
+    cursor: "pointer",
+    _hover: {
+      borderColor: "neutral.400",
     },
   }),
 
-  suggestionContent: css({
+  suggestionPreview: css({
+    aspectRatio: "3/2",
+    bgColor: "blue",
+    p: "3",
     display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    borderTop: "1px solid",
-    borderColor: "border-secondary",
-    px: "4",
-    py: "3",
+    justifyContent: "flex-end",
+    "& span": { textStyle: "body-sm" },
   }),
 
-  suggestionBtn: css({ fontWeight: "bold", textStyle: "body-base", cursor: "pointer" }),
+  suggestionColorValue: css({
+    px: "4",
+    py: "2",
+    borderTop: "1px solid",
+    borderTopColor: "border-secondary",
+    "& p": { textAlign: "center", textStyle: "body-sm" },
+  }),
 
-  suggestionContrast: css({ textStyle: "body-base", color: "text-secondary" }),
+  suggestionSelected: css({
+    outline: "2px solid",
+    outlineColor: "neutral.700",
+  }),
 };

@@ -6,7 +6,7 @@ export default defineRecipe({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    fontWeight: "700",
+    fontWeight: "600",
     cursor: "pointer",
   },
   variants: {
@@ -23,32 +23,67 @@ export default defineRecipe({
         px: "4",
         rounded: "lg",
       },
+      lg: {
+        height: "12",
+        textStyle: "body-base",
+        px: "6",
+        rounded: "lg",
+      },
     },
     variant: {
       outline: {
         borderWidth: "1px",
-        borderColor: "border-primary",
+        borderColor: "border-secondary",
         borderStyle: "solid",
         backgroundColor: "transparent",
-        color: "text-primary",
+        color: "text-secondary",
       },
       solid: {
         backgroundColor: "bg-primary-solid",
+        background:
+          "linear-gradient(to bottom, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0) 100%)",
         color: "white",
+        borderWidth: "1px",
+        borderStyle: "solid",
+        borderImage:
+          "linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 100%)",
+        borderImageSlice: 1,
       },
       "solid-white": {
-        backgroundColor: "white",
-        color: "text-primary",
+        borderWidth: "1px",
+        borderColor: "border-secondary",
+        borderStyle: "solid",
+        backgroundColor: "bg-primary",
+        color: "text-secondary",
+        boxShadow: "0px 1px 3px rgba(0,0,0,0.07)",
       },
     },
     isIconOnly: {
       true: {
-        rounded: "999px!",
         px: "0!",
       },
     },
+    isDisabled: {
+      true: {},
+    },
   },
   compoundVariants: [
+    {
+      isDisabled: true,
+      css: {
+        bgColor: "bg-disabled !important",
+        color: "text-disabled !important",
+        borderColor: "border-disabled !important",
+        cursor: "not-allowed",
+      },
+    },
+    {
+      isIconOnly: true,
+      size: "lg",
+      css: {
+        width: "12!",
+      },
+    },
     {
       isIconOnly: true,
       size: "md",

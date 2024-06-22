@@ -1,13 +1,13 @@
 import { css } from "@root/styled-system/css";
-import { container } from "@root/styled-system/patterns";
 
-import { dmSans } from "@/styles/fonts";
+// import { dmSans } from "@/styles/fonts";
 import { Layout } from "@/components/layout";
-import { Aside } from "@/components/aside";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { GoogleAnalytics } from "@/components/google-analytics";
+import { DialogMoreDetails } from "@/components/dialog-more-details";
 import metadata from "@/config/seo";
+import { font } from "@/lib/local-font";
 
 import "../styles/globals.css";
 
@@ -19,22 +19,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body
-        className={`${dmSans.className} ${css({
+        className={`${font.className} ${css({
           color: "text-primary",
-          bg: "bg-primary",
+          bg: "bg-secondary",
           textStyle: "body-base",
         })}`}
       >
         <Layout
-          aside={<Aside />}
           content={
             <>
-              <div className={container()}>{children}</div>
+              {children}
               <Footer />
             </>
           }
           header={<Navbar />}
         />
+        <DialogMoreDetails />
         {IS_PROD ? <GoogleAnalytics /> : null}
       </body>
     </html>
