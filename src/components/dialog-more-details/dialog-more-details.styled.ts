@@ -49,7 +49,7 @@ export const classes = {
     h: "1.5",
     flexShrink: "0",
     rounded: "999px",
-    bgColor: "bg-secondary",
+    bgColor: "bg-primary",
     mt: "3",
     mb: "8",
   }),
