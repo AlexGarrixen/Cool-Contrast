@@ -22,7 +22,7 @@ export function RandomButton() {
   }
 
   return (
-    <Button disabled={isPending} size="lg" variant="solid" onClick={onClick}>
+    <Button keepColorOnDisabled isDisabled={isPending} size="lg" variant="solid" onClick={onClick}>
       Random
     </Button>
   );

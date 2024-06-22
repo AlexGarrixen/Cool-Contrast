@@ -8,12 +8,6 @@ export default defineRecipe({
     justifyContent: "center",
     fontWeight: "600",
     cursor: "pointer",
-    _disabled: {
-      bgColor: "bg-disabled !important",
-      color: "text-disabled !important",
-      borderColor: "border-disabled !important",
-      cursor: "not-allowed",
-    },
   },
   variants: {
     size: {
@@ -69,8 +63,20 @@ export default defineRecipe({
         px: "0!",
       },
     },
+    isDisabled: {
+      true: {},
+    },
   },
   compoundVariants: [
+    {
+      isDisabled: true,
+      css: {
+        bgColor: "bg-disabled !important",
+        color: "text-disabled !important",
+        borderColor: "border-disabled !important",
+        cursor: "not-allowed",
+      },
+    },
     {
       isIconOnly: true,
       size: "lg",

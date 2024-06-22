@@ -32,7 +32,7 @@ export function DialogFooter({ onCancel }: { onCancel?: () => void }) {
     <footer
       className={css({ display: "flex", gap: "3", px: "6", py: "6", "& button": { flex: 1 } })}
     >
-      <Button disabled={isDisabledApply} size="lg" variant="solid" onClick={onApply}>
+      <Button isDisabled={isDisabledApply} size="lg" variant="solid" onClick={onApply}>
         Apply
       </Button>
       <Button size="lg" variant="solid-white" onClick={onCancel}>
