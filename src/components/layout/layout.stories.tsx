@@ -15,7 +15,6 @@ export const Preview: Story = {
   name: "Default Preview",
   args: {
     header: <>header</>,
-    aside: <>aside</>,
     content: <>content</>,
   },
   render: (args) => (
