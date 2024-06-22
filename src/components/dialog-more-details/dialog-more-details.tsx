@@ -54,7 +54,6 @@ export function DialogMoreDetails() {
           <div className={classes.content}>
             <ContrastRatio />
             <Sugesstions />
-            <Sugesstions />
           </div>
           <DialogFooter onCancel={onClose} />
         </Drawer.Content>
