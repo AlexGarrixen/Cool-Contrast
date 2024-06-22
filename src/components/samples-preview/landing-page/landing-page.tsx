@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { css } from "@root/styled-system/css";
 
 import { WindowMockup } from "./window-mockup";
@@ -13,15 +14,29 @@ const classes = {
     borderColor: "border-secondary!",
     overflow: "hidden",
   }),
+
+  containerFullScreen: css({ overflowY: "auto" }),
 };
 
 export function LandingPage() {
+  const refContainerFullScreen = useRef<HTMLDivElement>(null);
+
+  function onClickExpand() {
+    const element = refContainerFullScreen.current;
+
+    if (!element) return;
+
+    element.requestFullscreen();
+  }
+
   return (
     <div className={classes.root}>
-      <WindowMockup />
-      <Hero />
-      <Releases />
-      <Tours />
+      <WindowMockup onClickExpand={onClickExpand} />
+      <div ref={refContainerFullScreen} className={classes.containerFullScreen}>
+        <Hero />
+        <Releases />
+        <Tours />
+      </div>
     </div>
   );
 }

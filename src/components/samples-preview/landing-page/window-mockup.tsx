@@ -1,5 +1,7 @@
 import { css } from "@root/styled-system/css";
 
+import { Icons } from "@/components/icons-lib";
+
 const classes = {
   root: css({
     px: "6",
@@ -9,6 +11,13 @@ const classes = {
     bgColor: "bg-primary",
     borderBottom: "1px solid",
     borderColor: "border-secondary",
+    justifyContent: "space-between",
+    alignItems: "center",
+  }),
+
+  dots: css({
+    display: "flex",
+    gap: "2",
   }),
 
   windowDot: css({
@@ -21,14 +30,23 @@ const classes = {
     "&:nth-child(2)": { bgColor: "warning.500" },
     "&:nth-child(3)": { bgColor: "success.500" },
   }),
+
+  btn: css({ cursor: "pointer" }),
 };
 
-export function WindowMockup() {
+export function WindowMockup({ onClickExpand }: { onClickExpand?: () => void }) {
   return (
     <section className={classes.root}>
-      <span className={classes.windowDot} />
-      <span className={classes.windowDot} />
-      <span className={classes.windowDot} />
+      <div className={classes.dots}>
+        <span className={classes.windowDot} />
+        <span className={classes.windowDot} />
+        <span className={classes.windowDot} />
+      </div>
+      <div>
+        <button className={classes.btn} type="button" onClick={onClickExpand}>
+          <Icons.Expand />
+        </button>
+      </div>
     </section>
   );
 }

@@ -22,7 +22,7 @@ const classes = {
 
   complianceResult: css({
     textStyle: "body-base",
-    fontWeight: "medium",
+    fontWeight: "500",
     display: "inline-flex",
     "& > svg": { mr: 1 },
   }),
