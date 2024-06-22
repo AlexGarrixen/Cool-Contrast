@@ -13,6 +13,7 @@ export function DialogFooter({ onCancel }: { onCancel?: () => void }) {
     useAtom(selectedFgSuggestion);
   const setBg = useSetAtom(background);
   const setFg = useSetAtom(foreground);
+  const isDisabledApply = !selectedBackgroundSuggestion || !selectedForegroundSuggestion;
 
   function onApply() {
     if (selectedBackgroundSuggestion) {
@@ -23,13 +24,15 @@ export function DialogFooter({ onCancel }: { onCancel?: () => void }) {
       setFg(selectedForegroundSuggestion);
       setSelectedForegroundSuggestion("");
     }
+
+    onCancel?.();
   }
 
   return (
     <footer
       className={css({ display: "flex", gap: "3", px: "6", py: "6", "& button": { flex: 1 } })}
     >
-      <Button size="lg" variant="solid" onClick={onApply}>
+      <Button disabled={isDisabledApply} size="lg" variant="solid" onClick={onApply}>
         Apply
       </Button>
       <Button size="lg" variant="solid-white" onClick={onCancel}>

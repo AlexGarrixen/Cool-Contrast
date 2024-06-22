@@ -27,7 +27,7 @@ export const classes = {
     zIndex: 20,
   }),
 
-  drawerOverlay: css({ position: "fixed", inset: 9, bgColor: "black/40", zIndex: 10 }),
+  drawerOverlay: css({ position: "fixed", inset: 9, bgColor: "black/30", zIndex: 10 }),
 
   drawerContent: css({
     bgColor: "white",

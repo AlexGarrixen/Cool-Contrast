@@ -7,11 +7,22 @@ export const background = atom<string>("#261893");
 
 export const foreground = atom<string>("#DBFF5E");
 
+export const selectedFgSuggestion = atom("");
+
+export const selectedBgSuggestion = atom("");
+
 const colors = atom((get) => {
   const bg = get(background);
   const fg = get(foreground);
 
   return { bg, fg };
+});
+
+const selectedSuggestionsColors = atom((get) => {
+  const bgSuggestion = get(selectedBgSuggestion);
+  const fgSuggestion = get(selectedFgSuggestion);
+
+  return { bgSuggestion, fgSuggestion };
 });
 
 export const swapColors = atom(null, (get, set) => {
@@ -23,13 +34,19 @@ export const swapColors = atom(null, (get, set) => {
 
 export const wcagLevelsResult = atom((get) => {
   const { bg, fg } = get(colors);
+  const { bgSuggestion, fgSuggestion } = get(selectedSuggestionsColors);
+  const resolvedBg = bgSuggestion || bg;
+  const resolvedFg = fgSuggestion || fg;
 
-  return wcagContrastTest(bg, fg);
+  return wcagContrastTest(resolvedBg, resolvedFg);
 });
 
 export const contrastRelation = atom((get) => {
   const { bg, fg } = get(colors);
-  const contrast = Color(bg).contrast(Color(fg));
+  const { bgSuggestion, fgSuggestion } = get(selectedSuggestionsColors);
+  const resolvedBg = bgSuggestion || bg;
+  const resolvedFg = fgSuggestion || fg;
+  const contrast = Color(resolvedBg).contrast(Color(resolvedFg));
   let feedback: "poor" | "good" | "very-good" = "poor";
 
   if (contrast > contrastGuidelines.AAALevel.largeText) feedback = "good";
@@ -38,10 +55,11 @@ export const contrastRelation = atom((get) => {
   return { contrast, feedback };
 });
 
+export const clearSuggestionsPreselected = atom(null, (get, set) => {
+  set(selectedBgSuggestion, "");
+  set(selectedFgSuggestion, "");
+});
+
 export const contentTab = atom<"landing" | "elements">("landing");
 
 export const showDialogMoreDetails = atom(false);
-
-export const selectedFgSuggestion = atom("");
-
-export const selectedBgSuggestion = atom("");

@@ -1,9 +1,17 @@
 "use client";
 
-import { useAtomValue, useAtom } from "jotai";
+import { useMemo } from "react";
+import { useAtomValue } from "jotai";
 import { cx } from "@root/styled-system/css";
+import chroma from "chroma-js";
 
-import { background, foreground, contrastRelation } from "@/store";
+import {
+  background,
+  foreground,
+  selectedFgSuggestion,
+  selectedBgSuggestion,
+  contrastRelation,
+} from "@/store";
 import { createSuggestions } from "@/lib/contrast-suggestions";
 
 import classes from "./suggestions.styled";
@@ -17,18 +25,25 @@ interface SuggestionsProps extends Pick<SuggestionItemProps, "onApply"> {
 type Suggestions = ReturnType<typeof createSuggestions>;
 
 export function Suggestions({ onApply, className, type, selectedColor }: SuggestionsProps) {
-  const [fg, setFg] = useAtom(foreground);
-  const [bg, setBg] = useAtom(background);
+  const fg = useAtomValue(foreground);
+  const bg = useAtomValue(background);
+  const fgSuggestion = useAtomValue(selectedFgSuggestion);
+  const bgSuggestion = useAtomValue(selectedBgSuggestion);
   const score = useAtomValue(contrastRelation);
   const isFg = type === "foreground";
   const suggestions = getSuggestions();
+
   const isEmpty = suggestions.length === 0;
 
-  function getSuggestions() {
+  function getSuggestions(): ReturnType<typeof createSuggestions> {
+    const isModePreview = Boolean(fgSuggestion || bgSuggestion);
+
     const output = createSuggestions({ forColor: isFg ? bg : fg, matchingColor: isFg ? fg : bg });
 
     return output.filter(
-      (sugg) => parseFloat(sugg.contrast) > score.contrast && sugg.color !== (isFg ? fg : bg),
+      (sugg) =>
+        parseFloat(sugg.contrast) > (!isModePreview ? score.contrast : chroma.contrast(bg, fg)) &&
+        sugg.color !== (isFg ? fg : bg),
     );
   }
 

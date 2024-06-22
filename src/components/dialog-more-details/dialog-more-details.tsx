@@ -5,7 +5,7 @@ import { useAtom, useSetAtom } from "jotai";
 import * as Dialog from "@radix-ui/react-dialog";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { showDialogMoreDetails, selectedBgSuggestion, selectedFgSuggestion } from "@/store";
+import { showDialogMoreDetails, clearSuggestionsPreselected } from "@/store";
 
 import { ContrastRatio } from "./contrast-ratio";
 import { Sugesstions } from "./suggestions";
@@ -14,17 +14,16 @@ import { classes } from "./dialog-more-details.styled";
 
 export function DialogMoreDetails() {
   const [isOpen, setIsOpen] = useAtom(showDialogMoreDetails);
-  const setSelectedBgSuggestion = useSetAtom(selectedBgSuggestion);
-  const setSelectedFgSuggestion = useSetAtom(selectedFgSuggestion);
+  const clearColorsPreselected = useSetAtom(clearSuggestionsPreselected);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  const onClose = () => setIsOpen(false);
+  function onClose() {
+    setIsOpen(false);
+    clearColorsPreselected();
+  }
 
   function onOpenChange(open: boolean) {
-    if (!open) {
-      setSelectedBgSuggestion("");
-      setSelectedFgSuggestion("");
-    }
+    if (!open) clearColorsPreselected();
 
     setIsOpen(open);
   }
