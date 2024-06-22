@@ -27,7 +27,7 @@ const classes = {
 
   complianceSelectors: css({ display: "flex", alignItems: "center", gap: 4 }),
 
-  complianceActions: css({ display: "flex", gap: 4 }),
+  complianceActions: css({ display: "flex", gap: 4, pr: { base: 4, lg: 0 } }),
 };
 
 export function Toolbar() {
