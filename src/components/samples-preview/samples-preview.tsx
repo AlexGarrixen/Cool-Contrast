@@ -1,7 +1,7 @@
 "use client";
 
 import { useAtomValue } from "jotai";
-import { css, cx } from "@root/styled-system/css";
+import { css } from "@root/styled-system/css";
 import { container } from "@root/styled-system/patterns";
 import Color from "color";
 
@@ -18,7 +18,9 @@ import { UIElements } from "./ui-elements";
 import { fgVar, bgVar } from "./utils";
 
 const classes = {
-  root: css({ mt: 6 }),
+  root: css({
+    pt: 6,
+  }),
 };
 
 const previewModes = {
@@ -39,10 +41,12 @@ export function SamplesPreview() {
 
   return (
     <section
-      className={cx(classes.root, container())}
+      className={classes.root}
       style={{ [fgVar as string]: fgRgb, [bgVar as string]: bgRgb }}
     >
-      {activeTab === previewModes.minimalistPage ? <LandingPage /> : <UIElements />}
+      <div className={container()}>
+        {activeTab === previewModes.minimalistPage ? <LandingPage /> : <UIElements />}
+      </div>
     </section>
   );
 }

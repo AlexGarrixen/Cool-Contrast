@@ -15,7 +15,7 @@ export function Layout({ header, content }: LayoutProps) {
       <header className={classes.header}>
         <div className={container({ maxW: "100%", mx: "0" })}>{header}</div>
       </header>
-      <main>{content}</main>
+      <main className={classes.main}>{content}</main>
     </>
   );
 }
