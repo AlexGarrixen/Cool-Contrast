@@ -13,7 +13,7 @@ export function DialogFooter({ onCancel }: { onCancel?: () => void }) {
     useAtom(selectedFgSuggestion);
   const setBg = useSetAtom(background);
   const setFg = useSetAtom(foreground);
-  const isDisabledApply = !selectedBackgroundSuggestion || !selectedForegroundSuggestion;
+  const isDisabledApply = !selectedBackgroundSuggestion && !selectedForegroundSuggestion;
 
   function onApply() {
     if (selectedBackgroundSuggestion) {

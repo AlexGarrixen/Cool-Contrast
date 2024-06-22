@@ -8,6 +8,12 @@ export default defineRecipe({
     justifyContent: "center",
     fontWeight: "600",
     cursor: "pointer",
+    _disabled: {
+      bgColor: "bg-disabled !important",
+      color: "text-disabled !important",
+      borderColor: "border-disabled !important",
+      cursor: "not-allowed",
+    },
   },
   variants: {
     size: {
