@@ -10,7 +10,7 @@ const metadata: Metadata = {
   },
   description: "Check color pairings for contrast, ensuring alignment with WCAG guidelines",
   openGraph: {
-    images: "/og-image.webp",
+    images: "/seo-og-image.webp",
     url: "https://coolcontrast.vercel.app",
     type: "website",
   },
