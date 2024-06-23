@@ -1,4 +1,4 @@
-![inspect the perfect combination of your colors](./public/og-image.webp "inspect the perfect combination of your colors")
+![inspect the perfect combination of your colors](./public/seo-og-image.webp "inspect the perfect combination of your colors")
 
 ## Features
 
@@ -39,7 +39,7 @@ npm run panda:prepare && npm run build
 # execute test suites
 npm run test
 
-# generates code coverage reports 
+# generates code coverage reports
 npm run test:coverage
 ```
 
