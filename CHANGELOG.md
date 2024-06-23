@@ -1,5 +1,39 @@
 # Changelog
 
+## [1.7.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.6.0...v1.7.0) (2024-06-23)
+
+
+### Features
+
+* add color picker ([58ce9b8](https://github.com/AlexGarrixen/Cool-Contrast/commit/58ce9b845c7e23cbcc6376a0991df9f3c6783380))
+* add color selector ([3bad71c](https://github.com/AlexGarrixen/Cool-Contrast/commit/3bad71c3ff9e017c335502940519bdb908150352))
+* add dialog more details ([836f4f1](https://github.com/AlexGarrixen/Cool-Contrast/commit/836f4f1d262fecf970c2be25fd89bc2ef5ef90d1))
+* add fade effect in toolbar section ([7201ed0](https://github.com/AlexGarrixen/Cool-Contrast/commit/7201ed099c1dc9ef9274415d36b8a607c77c9338))
+* add funcionality random color generate ([c1202f7](https://github.com/AlexGarrixen/Cool-Contrast/commit/c1202f79fff087da8773c62aab1ae694b449844a))
+* add live preview when preselected suggestions ([ad96c33](https://github.com/AlexGarrixen/Cool-Contrast/commit/ad96c33c8d0e5920679066d44f870bf624098520))
+* add toolbar ([4f59202](https://github.com/AlexGarrixen/Cool-Contrast/commit/4f59202f26182e99ed8561cf6e863d13c1e77f4e))
+* **button recipe:** add isDisabled variant ([7898f51](https://github.com/AlexGarrixen/Cool-Contrast/commit/7898f51a336ccb426fc21cd537d9e235db20e546))
+* **button recipe:** update color variants ([a85358e](https://github.com/AlexGarrixen/Cool-Contrast/commit/a85358e0616f5ea03e079f2377d5878ddb0326cb))
+* **hooks:** add useColorChannelField ([dcf5c63](https://github.com/AlexGarrixen/Cool-Contrast/commit/dcf5c63b565b4446eabe761f4c38ac65e32d67e0))
+* **hooks:** add useHexColorField ([920a14c](https://github.com/AlexGarrixen/Cool-Contrast/commit/920a14c2f81c4b67489a3a73b73b40add9061ce9))
+* **hooks:** update use media query ([8af914a](https://github.com/AlexGarrixen/Cool-Contrast/commit/8af914a3306663651810441caa76c73c29df96f6))
+* implement landing preview ([a7f1ecf](https://github.com/AlexGarrixen/Cool-Contrast/commit/a7f1ecfd1872a6fbacb892cabcd15191f4e7a7d5))
+* **landing preview:** add hero ([0b431de](https://github.com/AlexGarrixen/Cool-Contrast/commit/0b431de403fad15174041597c4c76c4aa69147ef))
+* **landing preview:** add page full preview ([e4c4d14](https://github.com/AlexGarrixen/Cool-Contrast/commit/e4c4d1479ffb3e243e7df9ad2744cafcb81ec14e))
+* **landing preview:** add releases ([d8f4bf5](https://github.com/AlexGarrixen/Cool-Contrast/commit/d8f4bf5b129ab7e55c4276c1b9b3330fea233052))
+* **landing preview:** add tours ([8c47ffa](https://github.com/AlexGarrixen/Cool-Contrast/commit/8c47ffabbb9046a92cfc0266e8dba2fd4573d710))
+* **seo:** update metadata config ([e2eebe6](https://github.com/AlexGarrixen/Cool-Contrast/commit/e2eebe6a9f0c2f6d1a6013776f650fed36dd1056))
+* **seo:** update open graph image ([a5c93f5](https://github.com/AlexGarrixen/Cool-Contrast/commit/a5c93f5572758d562cabf0f382ff98fe5007e532))
+* **store:** update default colors ([df18ab4](https://github.com/AlexGarrixen/Cool-Contrast/commit/df18ab407163665dd4663222d5b63f12409d86ab))
+* **toolbar:** add full screen functionality ([3baf7d5](https://github.com/AlexGarrixen/Cool-Contrast/commit/3baf7d538af163ef8216c17185610e8727e9df26))
+* **toolbar:** replace tab by select ([966d983](https://github.com/AlexGarrixen/Cool-Contrast/commit/966d9831c1e1fadfdc6f221da5073e6d3f28ba28))
+
+
+### Bug Fixes
+
+* **dialog more details:** remove duplicated suggestions ([436f8eb](https://github.com/AlexGarrixen/Cool-Contrast/commit/436f8ebf40a276df2a5bddc1687ffef4fcea9582))
+* **random color generator:** set maximum attempts to avoid possible loops ([cfc010b](https://github.com/AlexGarrixen/Cool-Contrast/commit/cfc010b105162ca2919cefacd7d4f063e493d74d))
+
 ## [1.6.0](https://github.com/AlexGarrixen/Cool-Contrast/compare/v1.5.0...v1.6.0) (2024-01-21)
 
 
